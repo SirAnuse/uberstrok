@@ -13,6 +13,7 @@ namespace UberStrok.WebServices.Client
 
         protected BaseWebServiceClient(string endPoint, string service)
         {
+            s_binding.MaxReceivedMessageSize = int.MaxValue;
             if (endPoint == null)
                 throw new ArgumentNullException(nameof(endPoint));
 
