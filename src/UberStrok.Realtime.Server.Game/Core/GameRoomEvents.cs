@@ -54,6 +54,21 @@ namespace UberStrok.Realtime.Server.Game
             }
         }
 
+        public void SendEmitQuickItem(int cmid, Vector3 origin, Vector3 direction, int itemId, byte playerNumber, int projectileID)
+        {
+            using (var bytes = new MemoryStream())
+            {
+                Int32Proxy.Serialize(bytes, cmid);
+                Vector3Proxy.Serialize(bytes, origin);
+                Vector3Proxy.Serialize(bytes, direction);
+                Int32Proxy.Serialize(bytes, itemId);
+                ByteProxy.Serialize(bytes, playerNumber);
+                Int32Proxy.Serialize(bytes, projectileID);
+
+                SendEvent((byte)IGameRoomEventsType.EmitQuickItem, bytes);
+            }
+        }
+
         public void SendEmitProjectile(int cmid, Vector3 origin, Vector3 direction, byte slot, int projectileId, bool explode)
         {
             using (var bytes = new MemoryStream())

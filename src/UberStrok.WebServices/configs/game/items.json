@@ -6,6 +6,2808 @@
             "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
+            "ID": 1207,
+            "Name": "Ninja Claws White Dragon Edition",
+            "PrefabName": "NinjaGlovesWhite-DE",
+            "Description": "White Dragon Ninja Shinzoku (4/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1206,
+            "Name": "Ninja Tabi White Dragon Edition",
+            "PrefabName": "NinjaBootsWhite-DE",
+            "Description": "White Dragon Ninja Shinzoku (5/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1205,
+            "Name": "Ninja Headband White Dragon Edition",
+            "PrefabName": "NinjaHeadWhite-DE",
+            "Description": "White Dragon Ninja Shinzoku (3/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 16,
+            "ID": 1204,
+            "Name": "Ninja Greaves White Dragon Edition",
+            "PrefabName": "NinjaLowerBodyWhite-DE",
+            "Description": "White Dragon Ninja Shinzoku (2/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1203,
+            "Name": "Ninja Cuirass White Dragon Edition",
+            "PrefabName": "NinjaUpperBodyWhite-DE",
+            "Description": "White Dragon Ninja Shinzoku (1/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 14,
+            "ID": 1202,
+            "Name": "Ninja Mask White Dragon Edition",
+            "PrefabName": "NinjaFaceWhite-DE-NinjaFaceWhite-DE",
+            "Description": "White Dragon Ninja Shinzoku (6/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1201,
+            "Name": "Ninja Claws Black Dragon Edition",
+            "PrefabName": "NinjaGlovesBlack-DE",
+            "Description": "Black Dragon Ninja Shinzoku (4/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1200,
+            "Name": "Ninja Tabi Black Dragon Edition",
+            "PrefabName": "NinjaBootsBlack-DE",
+            "Description": "Black Dragon Ninja Shinzoku (5/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1199,
+            "Name": "Ninja Headband Black Dragon Edition",
+            "PrefabName": "NinjaHeadBlack-DE",
+            "Description": "Black Dragon Ninja Shinzoku (3/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 16,
+            "ID": 1198,
+            "Name": "Ninja Greaves Black Dragon Edition",
+            "PrefabName": "NinjaLowerBodyBlack-DE",
+            "Description": "Black Dragon Ninja Shinzoku (2/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1197,
+            "Name": "Ninja Cuirass Black Dragon Edition",
+            "PrefabName": "NinjaUpperBodyBlack-DE",
+            "Description": "Black Dragon Ninja Shinzoku (1/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 14,
+            "ID": 1196,
+            "Name": "Ninja Mask Black Dragon Edition",
+            "PrefabName": "NinjaFaceBlack-DE-NinjaFaceBlack-DE",
+            "Description": "Black Dragon Ninja Shinzoku (6/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 16,
+            "ID": 1195,
+            "Name": "Juggernaut Leg Armor Dragon Edition",
+            "PrefabName": "JuggernautLowerbodyDE",
+            "Description": "Juggernaut Power Armor (2/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1194,
+            "Name": "Juggernaut Chassis Dragon Edition",
+            "PrefabName": "JuggernautUpperbodyDE",
+            "Description": "Juggernaut Power Armor (1/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1193,
+            "Name": "Juggernaut Power Grips Dragon Edition",
+            "PrefabName": "JuggernautGlovesDE",
+            "Description": "Juggernaut Power Armor (4/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1192,
+            "Name": "Juggernaut Boots Dragon Edition",
+            "PrefabName": "JuggernautBootsDE",
+            "Description": "Juggernaut Power Armor (5/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 16,
+            "ID": 1191,
+            "Name": "Juggernaut Leg Armor",
+            "PrefabName": "JuggernautLowerbody",
+            "Description": "Juggernaut Power Armor (2/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1190,
+            "Name": "Juggernaut Chassis",
+            "PrefabName": "JuggernautUpperbody",
+            "Description": "Juggernaut Power Armor (1/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1189,
+            "Name": "Juggernaut Visor",
+            "PrefabName": "JuggernautHead",
+            "Description": "Juggernaut Power Armor (3/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1187,
+            "Name": "Juggernaut Power Grips",
+            "PrefabName": "JuggernautGloves",
+            "Description": "Juggernaut Power Armor (4/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1186,
+            "Name": "Juggernaut Boots",
+            "PrefabName": "JuggernautBoots",
+            "Description": "Juggernaut Power Armor (5/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1185,
+            "Name": "Jack O'Hat",
+            "PrefabName": "PumpkinHead",
+            "Description": "A hat straight from Hell's kitchen garden.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 16,
+            "ID": 1184,
+            "Name": "Desert Pants",
+            "PrefabName": "Terrorist_LB_Camo04",
+            "Description": "These are the most stain resistant pants in the world. They are also made of desert.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 16,
+            "ID": 1183,
+            "Name": "Fire Pants",
+            "PrefabName": "Terrorist_LB_Camo03",
+            "Description": "These are the most stain resistant pants in the world. They are also made of fire.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 16,
+            "ID": 1182,
+            "Name": "Ice Pants",
+            "PrefabName": "Terrorist_LB_Default",
+            "Description": "These are the most stain resistant pants in the world. They are also made of ice.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 16,
+            "ID": 1181,
+            "Name": "Jungle Pants of Resistance",
+            "PrefabName": "Terrorist_LB_Camo02",
+            "Description": "These are the most stain resistant pants in the world. The are also made of jungle.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 16,
+            "ID": 1180,
+            "Name": "Rebel Pants Urban",
+            "PrefabName": "Terrorist_LB_Camo01",
+            "Description": "These are the most stain resistant pants in the world. The are also made of urban.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 15,
+            "ID": 1179,
+            "Name": "Rebel Vest",
+            "PrefabName": "Terrorist_UB_Default",
+            "Description": "Strike terror into your opponents with top tier kevlar. Complete with Backpack - remember, the red X marks the spot.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1178,
+            "Name": "Terrorist Balaclava",
+            "PrefabName": "Terrorist_Face-Terrorist_Face",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1177,
+            "Name": "Terrorist Gloves",
+            "PrefabName": "Terrorist_Gloves",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1176,
+            "Name": "Terrorist Boots",
+            "PrefabName": "Terrorist_Boots",
+            "Description": "Perfect for squashing the competition like the bugs they are.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 16,
+            "ID": 1175,
+            "Name": "Lifeless Legs",
+            "PrefabName": "SkeletonLowerBody",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1174,
+            "Name": "The Bone Cage",
+            "PrefabName": "SkeletonUpperBody",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1173,
+            "Name": "Cadaverous Claws",
+            "PrefabName": "SkeletonGloves",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1172,
+            "Name": "Skeletal Shoes",
+            "PrefabName": "SkeletonShoes",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 14,
+            "ID": 1171,
+            "Name": "Fangs of Lucius the Cruel",
+            "PrefabName": "Vampire_Face-Vampire_Face",
+            "Description": "Visage of Lucius the Cruel (6/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 16,
+            "ID": 1170,
+            "Name": "Drawers of Lucius the Cruel",
+            "PrefabName": "Vampire_LB",
+            "Description": "Visage of Lucius the Cruel (2/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 15,
+            "ID": 1169,
+            "Name": "Mantle of Lucius the Cruel",
+            "PrefabName": "Vampire_UB",
+            "Description": "Visage of Lucius the Cruel (1/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1168,
+            "Name": "Coiffure of Lucius the Cruel",
+            "PrefabName": "Vampire_Hair",
+            "Description": "Visage of Lucius the Cruel (3/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1167,
+            "Name": "Gloves of Lucius the Cruel",
+            "PrefabName": "Vampire_Gloves",
+            "Description": "Visage of Lucius the Cruel (4/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1166,
+            "Name": "Boots of Lucius the Cruel",
+            "PrefabName": "Vampire_Boots",
+            "Description": "Visage of Lucius the Cruel (5/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 10,
+            "ArmorWeight": 20,
+            "ItemClass": 15,
+            "ID": 1165,
+            "Name": "Luxurious Leather Coat",
+            "PrefabName": "LeatherCoat",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1164,
+            "Name": "Leather Dress Shoes",
+            "PrefabName": "LeatherShoes",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
+            "ItemClass": 16,
+            "ID": 1163,
+            "Name": "Croc Skin Pants",
+            "PrefabName": "DundeeLowerbody",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
+            "ItemClass": 15,
+            "ID": 1162,
+            "Name": "Croc Skin Jacket",
+            "PrefabName": "DundeeUpperbody",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1161,
+            "Name": "Croc Skin Akubra",
+            "PrefabName": "DundeeHead",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1160,
+            "Name": "Croc Skin Boots",
+            "PrefabName": "DundeeShoes",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1159,
+            "Name": "Sir Magnus' Horns",
+            "PrefabName": "KnightHead_1_Golden",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1158,
+            "Name": "Sir Magnus' Helm",
+            "PrefabName": "KnightHead_2_Golden",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1157,
+            "Name": "Sir Magnus' Crest",
+            "PrefabName": "KnightHead_3_Golden",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1156,
+            "Name": "Sir Magnus' Boots",
+            "PrefabName": "KnightBootsGolden",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1155,
+            "Name": "Sir Magnus' Gauntlets",
+            "PrefabName": "KnightGlovesGolden",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 10,
+            "ItemClass": 16,
+            "ID": 1154,
+            "Name": "Sir Magnus' Greaves",
+            "PrefabName": "KnightLowerbodyGolden",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1153,
+            "Name": "Sir Magnus' Cuirass",
+            "PrefabName": "KnightUpperbodyGolden",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 14,
+            "ID": 1152,
+            "Name": "ArcticDread Mask",
+            "PrefabName": "ArcticDreadsFace",
+            "Description": "ArcticDread Battlegear (6/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 16,
+            "ID": 1151,
+            "Name": "ArcticDread Tactical Pants",
+            "PrefabName": "ArcticDreadsLowerbody",
+            "Description": "ArcticDread Battlegear (2/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1150,
+            "Name": "ArcticDread Tactical Jacket",
+            "PrefabName": "ArcticDreadsUpperbody",
+            "Description": "ArcticDread Battlegear (1/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1149,
+            "Name": "ArcticDread Beanie",
+            "PrefabName": "ArcticDreadsHead",
+            "Description": "ArcticDread Battlegear (3/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1148,
+            "Name": "ArcticDread Gloves",
+            "PrefabName": "ArcticDreadsGloves",
+            "Description": "ArcticDread Battlegear (4/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1147,
+            "Name": "ArcticDread Boots",
+            "PrefabName": "ArcticDreadsBoots",
+            "Description": "ArcticDread Battlegear (5/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 16,
+            "ID": 1146,
+            "Name": "Sentinel Power Greaves",
+            "PrefabName": "MegatronLowerbody",
+            "Description": "Sentinel Power Armor (2/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1145,
+            "Name": "Sentinel Chassis",
+            "PrefabName": "MegatronUpperbody",
+            "Description": "Sentinel Power Armor (1/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1144,
+            "Name": "Sentinel Cowl",
+            "PrefabName": "MegatronHead",
+            "Description": "Sentinel Power Armor (3/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1143,
+            "Name": "Sentinel Gloves",
+            "PrefabName": "MegatronGloves",
+            "Description": "Sentinel Power Armor (4/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1142,
+            "Name": "Sentinel Spurs",
+            "PrefabName": "MegatronBoots",
+            "Description": "Sentinel Power Armor (5/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 14,
+            "ID": 1141,
+            "Name": "Black Corps Balaclava",
+            "PrefabName": "BlackCorpsFace",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 16,
+            "ID": 1140,
+            "Name": "Black Corps Leg Armor",
+            "PrefabName": "BlackCorpsLowerbody",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1139,
+            "Name": "Black Corps Body Armor",
+            "PrefabName": "BlackCorpsUpperbody",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1138,
+            "Name": "Black Corps Helmet",
+            "PrefabName": "BlackCorpsHead",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1137,
+            "Name": "Black Corps Gloves",
+            "PrefabName": "BlackCorpsGloves",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1136,
+            "Name": "Black Corps Boots",
+            "PrefabName": "BlackCorpsBoots",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1135,
+            "Name": "SuperSpy Jacket",
+            "PrefabName": "007",
+            "Description": "The sneakiest jacket in the west.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
+            "ItemClass": 16,
+            "ID": 1133,
+            "Name": "The Jeans of Manliness",
+            "PrefabName": "RamboLowerbody",
+            "Description": "Punk Wear (2/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
+            "ItemClass": 15,
+            "ID": 1132,
+            "Name": "The Muscle Suit",
+            "PrefabName": "RamboUpperbody",
+            "Description": "Punk Wear (1/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1131,
+            "Name": "The Commandanna",
+            "PrefabName": "RamboHead",
+            "Description": "Punk Wear (3/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1130,
+            "Name": "The Goon Crushers",
+            "PrefabName": "RamboGloves",
+            "Description": "Punk Wear (4/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1129,
+            "Name": "The Tramplers",
+            "PrefabName": "RamboShoes",
+            "Description": "Punk Wear (5/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1124,
+            "Name": "Torch of Ophion",
+            "PrefabName": "Halo_Heavy_Gloves",
+            "Description": "The gloves of Ophion will provide you with godlike grip for your guns. To shoot people with.",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1123,
+            "Name": "Spurs of Ophion",
+            "PrefabName": "Halo_M_Boots",
+            "Description": "Equip Ophion's Spurs to squash your enemies with Godlike power!",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1122,
+            "Name": "Crown of Ophion Heavy",
+            "PrefabName": "Halo_Heavy_Head",
+            "Description": "A Godlike Crown fit for a King!",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 16,
+            "ID": 1121,
+            "Name": "Axis of Ophion Heavy",
+            "PrefabName": "Halo_Heavy_LB",
+            "Description": "Gaub godlike resistance - Ophion Heavy gear features the highest Defense Bonus!",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 15,
+            "ID": 1120,
+            "Name": "Guard of Ophion Heavy",
+            "PrefabName": "Halo_Heavy_UB",
+            "Description": "Ultra resistant - Ophion Heavy gear features the highest Defense Bonus!",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1117,
+            "Name": "Iron Horns of Viktor",
+            "PrefabName": "KnightHead_1_Black",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1116,
+            "Name": "Iron Helm of Viktor",
+            "PrefabName": "KnightHead_2_Black",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1115,
+            "Name": "Iron Crest of Viktor",
+            "PrefabName": "KnightHead_3_Black",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1119,
+            "Name": "Iron Heels of Viktor",
+            "PrefabName": "KnightBootsBlack",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1118,
+            "Name": "Iron Fists of Viktor",
+            "PrefabName": "KnightGlovesBlack",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 10,
+            "ItemClass": 16,
+            "ID": 1114,
+            "Name": "Iron Legs of Viktor",
+            "PrefabName": "KnightLowerbodyBlack",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
+            "ItemClass": 15,
+            "ID": 1113,
+            "Name": "Iron Body of Viktor",
+            "PrefabName": "KnightUpperbodyBlack",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1112,
+            "Name": "DIY Sir Viktor",
+            "PrefabName": "HalloWeenPaperBagheadKnight",
+            "Description": null,
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1111,
+            "Name": "Sentai Samurai Gloves [Yellow]",
+            "PrefabName": "UberNinja-Yellow-Gloves",
+            "Description": "Yellow Sentai Samurai Armor (4/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1110,
+            "Name": "Sentai Samurai Boots [Yellow]",
+            "PrefabName": "UberNinja-Yellow-Boots",
+            "Description": "Yellow Sentai Samurai Armor (5/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1109,
+            "Name": "Sentai Samurai Helmet [Yellow]",
+            "PrefabName": "UberNinjia-Yellow-Head",
+            "Description": "Yellow Sentai Samurai Armor (3/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 10,
+            "ItemClass": 16,
+            "ID": 1108,
+            "Name": "Sentai Samurai Greaves [Yellow]",
+            "PrefabName": "UberNinja-Yellow-LB",
+            "Description": "Yellow Sentai Samurai Armor (2/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 10,
+            "ItemClass": 15,
+            "ID": 1107,
+            "Name": "Sentai Samurai Harness [Yellow]",
+            "PrefabName": "UberNinja-Yellow-UB",
+            "Description": "Yellow Sentai Samurai Armor (1/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1106,
+            "Name": "Sentai Samurai Gloves [White]",
+            "PrefabName": "UberNinja-White-Gloves",
+            "Description": "White Sentai Samurai Armor (4/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1105,
+            "Name": "Sentai Samurai Boots [White]",
+            "PrefabName": "UberNinja-White-Boots",
+            "Description": "White Sentai Samurai Armor (5/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 13,
+            "ID": 1104,
+            "Name": "Sentai Samurai Helmet [White]",
+            "PrefabName": "UberNinjia-White-Head",
+            "Description": "White Sentai Samurai Armor (3/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 16,
+            "ID": 1103,
+            "Name": "Sentai Samurai Greaves [White]",
+            "PrefabName": "UberNinja-White-LB",
+            "Description": "White Sentai Samurai Armor (2/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 15,
+            "ID": 1102,
+            "Name": "Sentai Samurai Harness [White]",
+            "PrefabName": "UberNinja-White-UB",
+            "Description": "White Sentai Samurai Armor (1/5)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
             "ID": 1101,
             "Name": "UberSanta Gloves",
             "PrefabName": "SantaGloves",
@@ -31,7 +2833,7 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1100,
@@ -57,38 +2859,10 @@
             "CustomProperties": { },
             "ItemProperties": { }
         },
-{
-            "ItemType": 3,
-            "ArmorPoints": 0,
-            "ArmorWeight": 0,
-            "ItemClass": 17,
-            "ID": 1099,
-            "Name": "Cap'n Bradford's Gloves",
-            "PrefabName": "PirateGloves",
-            "Description": "Cap'n Bradford's Finery (4/6)",
-            "LevelLock": 0,
-            "MaxDurationDays": 0,
-            "IsConsumable": false,
-            "Prices": [
-                {
-                    "Price": 0,
-                    "Currency": 1,
-                    "Discount": 0,
-                    "Amount": 1,
-                    "PackType": 0,
-                    "Duration": 5,
-                    "IsConsumable": true
-                }
-            ],
-            "IsForSale": true,
-            "ShopHighlightType": 3,
-            "CustomProperties": { },
-            "ItemProperties": { }
-        },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1098,
             "Name": "UberSanta Pants",
@@ -116,8 +2890,8 @@
 		
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1097,
             "Name": "UberSanta Jacket",
@@ -144,13 +2918,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
             "ID": 1096,
-            "Name": "Black Sentai Samurai Gloves",
+            "Name": "Sentai Samurai Gloves",
             "PrefabName": "UberNinja-Black-Gloves",
-            "Description": "Embrace the ninja.",
+            "Description": "Black Sentai Samurai Armor (4/5)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -172,13 +2946,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1095,
-            "Name": "Black Sentai Samurai Boots",
+            "Name": "Sentai Samurai Boots",
             "PrefabName": "UberNinja-Black-Boots",
-            "Description": "Embrace the ninja.",
+            "Description": "Black Sentai Samurai Armor (5/5)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -200,13 +2974,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1094,
-            "Name": "Black Sentai Samurai Helmet",
+            "Name": "Sentai Samurai Helmet",
             "PrefabName": "UberNinjia-Balck-Head",
-            "Description": "Embrace the ninja.",
+            "Description": "Black Sentai Samurai Armor (3/5)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -228,13 +3002,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 60,
             "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1093,
-            "Name": "Black Sentai Samurai Greaves",
+            "Name": "Sentai Samurai Greaves",
             "PrefabName": "UberNinja-Black-LB",
-            "Description": "Embrace the ninja.",
+            "Description": "Black Sentai Samurai Armor (2/5)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -256,13 +3030,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 60,
             "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1092,
-            "Name": "Black Sentai Samurai Harness",
+            "Name": "Sentai Samurai Harness",
             "PrefabName": "UberNinja-Black-UB",
-            "Description": "Embrace the ninja.",
+            "Description": "Black Sentai Samurai Armor (2/5)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -342,6 +3116,119 @@
             "ItemType": 3,
             "ArmorPoints": 0,
             "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1128,
+            "Name": "Ghost Pirate Gloves",
+            "PrefabName": "GhostPirateGloves",
+            "Description": "Cap'n Bradford's Finery (4/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 12,
+            "ID": 1127,
+            "Name": "Ghost Pirate Boots",
+            "PrefabName": "GhostPirateShoes",
+            "Description": "Cap'n Bradford's Finery (3/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 16,
+            "ID": 1126,
+            "Name": "Ghost Pirate Pants",
+            "PrefabName": "GhostPirateLowerbody",
+            "Description": "Cap'n Bradford's Finery (2/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		
+		{
+            "ItemType": 3,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
+            "ItemClass": 15,
+            "ID": 1125,
+            "Name": "Ghost Pirate Jacket",
+            "PrefabName": "GhostPirateUpperbody",
+            "Description": "Cap'n Bradford's Finery (1/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
             "ItemClass": 14,
             "ID": 1085,
             "Name": "Cap'n Bradford's Patch",
@@ -368,7 +3255,35 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
+            "ArmorWeight": 0,
+            "ItemClass": 17,
+            "ID": 1099,
+            "Name": "Cap'n Bradford's Gloves",
+            "PrefabName": "PirateGloves",
+            "Description": "Cap'n Bradford's Finery (4/6)",
+            "LevelLock": 0,
+            "MaxDurationDays": 0,
+            "IsConsumable": false,
+            "Prices": [
+                {
+                    "Price": 0,
+                    "Currency": 1,
+                    "Discount": 0,
+                    "Amount": 1,
+                    "PackType": 0,
+                    "Duration": 5,
+                    "IsConsumable": true
+                }
+            ],
+            "IsForSale": true,
+            "ShopHighlightType": 3,
+            "CustomProperties": { },
+            "ItemProperties": { }
+        },
+		{
+            "ItemType": 3,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1083,
@@ -396,8 +3311,8 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
             "ItemClass": 16,
             "ID": 1082,
             "Name": "Cap'n Bradford's Pants",
@@ -425,8 +3340,8 @@
 		
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
             "ItemClass": 15,
             "ID": 1081,
             "Name": "Cap'n Bradford's Jacket",
@@ -453,8 +3368,8 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
             "ItemClass": 15,
             "ID": 1080,
             "Name": "UberJacket",
@@ -481,8 +3396,8 @@
         },
 {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1079,
             "Name": "Baron's Blue Pants",
@@ -509,8 +3424,8 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1078,
             "Name": "Baron's Blue Jacket",
@@ -537,7 +3452,7 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
             "ID": 1077,
@@ -565,7 +3480,7 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1076,
@@ -593,8 +3508,8 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1075,
             "Name": "Baron's Pants",
@@ -621,8 +3536,8 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1074,
             "Name": "Baron's Jacket",
@@ -649,13 +3564,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
             "ID": 1073,
-            "Name": "S-Force Ninja Claws",
+            "Name": "SForce Ninja Claws",
             "PrefabName": "NinjaGloves",
-            "Description": "Embrace the ninja.",
+            "Description": "SForce Ninja Shinzoku (4/6)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -677,13 +3592,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1072,
-            "Name": "S-Force Ninja Tabi",
+            "Name": "SForce Ninja Tabi",
             "PrefabName": "NinjaShoes",
-            "Description": "Embrace the ninja.",
+            "Description": "SForce Ninja Shinzoku (5/6)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -705,13 +3620,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1071,
-            "Name": "S-Force Ninja Headband",
+            "Name": "SForce Ninja Headband",
             "PrefabName": "NinjaHead",
-            "Description": "Embrace the ninja.",
+            "Description": "SForce Ninja Shinzoku (3/6)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -733,13 +3648,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
             "ItemClass": 16,
             "ID": 1070,
-            "Name": "S-Force Ninja Greaves",
+            "Name": "SForce Ninja Greaves",
             "PrefabName": "NinjaLowerbody",
-            "Description": "Embrace the ninja.",
+            "Description": "SForce Ninja Shinzoku (2/6)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -761,13 +3676,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 40,
+            "ArmorWeight": 15,
             "ItemClass": 15,
             "ID": 1069,
-            "Name": "S-Force Ninja Cuirass",
+            "Name": "SForce Ninja Cuirass",
             "PrefabName": "NinjaUpperbody",
-            "Description": "Embrace the ninja.",
+            "Description": "SForce Ninja Shinzoku (1/6)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -789,13 +3704,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 14,
             "ID": 1068,
-            "Name": "S-Force Ninja Mask",
+            "Name": "SForce Ninja Mask",
             "PrefabName": "NinjaMaskBlack-NinjaMaskBlack",
-            "Description": "Embrace the ninja.",
+            "Description": "SForce Ninja Shinzoku (6/6)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -817,8 +3732,8 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
             "ItemClass": 16,
             "ID": 1067,
             "Name": "Mafioso Suit Pants",
@@ -845,8 +3760,8 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
             "ItemClass": 15,
             "ID": 1066,
             "Name": "Mafioso Jacket",
@@ -873,8 +3788,8 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1065,
             "Name": "Godfather Suit",
@@ -901,11 +3816,11 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1064,
-            "Name": "Unicorn Mask",
+            "Name": "Rainbow Horn",
             "PrefabName": "HorseHeadUnicorn",
             "Description": "Disclaimer: the horn does not add any offensive bonuses.",
             "LevelLock": 0,
@@ -929,7 +3844,7 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1063,
@@ -957,13 +3872,13 @@
         },
 		{
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1062,
             "Name": "Juggernaut Visor Dragon Edition",
             "PrefabName": "JuggernautHeadDE",
-            "Description": "Dread it. Run from it. The breadstick arrives all the same.",
+            "Description": "Juggernaut Power Armor (3/5)",
             "LevelLock": 0,
             "MaxDurationDays": 0,
             "IsConsumable": false,
@@ -985,8 +3900,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1001,
             "Name": "Suit of Agent Xenon [Limited]",
@@ -1013,8 +3928,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1002,
             "Name": "Base of Agent Xenon [Limited]",
@@ -1041,7 +3956,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1003,
@@ -1069,7 +3984,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1004,
@@ -1097,7 +4012,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
             "ID": 1005,
@@ -1125,8 +4040,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1006,
             "Name": "Base of Agent Xenon",
@@ -1153,7 +4068,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1007,
@@ -1181,7 +4096,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
             "ID": 1008,
@@ -1209,7 +4124,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1009,
@@ -1237,8 +4152,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1010,
             "Name": "Suit of Agent Xenon",
@@ -1265,8 +4180,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1011,
             "Name": "Stratos Suit",
@@ -1293,7 +4208,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1012,
@@ -1321,7 +4236,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
             "ID": 1013,
@@ -1349,7 +4264,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1014,
@@ -1377,8 +4292,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1015,
             "Name": "Stratos Legs",
@@ -1405,8 +4320,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1016,
             "Name": "Root of Dr Decay",
@@ -1433,8 +4348,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1017,
             "Name": "Root of Dr Decay [Limited]",
@@ -1461,8 +4376,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1018,
             "Name": "Prime of Dr Decay",
@@ -1489,8 +4404,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1019,
             "Name": "Prime of Dr Decay [Limited]",
@@ -1517,7 +4432,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1020,
@@ -1545,7 +4460,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1021,
@@ -1573,7 +4488,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
             "ID": 1022,
@@ -1601,7 +4516,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
             "ID": 1023,
@@ -1629,7 +4544,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1024,
@@ -1657,7 +4572,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1025,
@@ -1685,7 +4600,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 12,
             "ID": 1026,
@@ -1713,7 +4628,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 14,
             "ID": 1027,
@@ -1741,7 +4656,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 17,
             "ID": 1028,
@@ -1769,7 +4684,7 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
+            "ArmorPoints": 0,
             "ArmorWeight": 0,
             "ItemClass": 13,
             "ID": 1029,
@@ -1797,11 +4712,11 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 16,
             "ID": 1030,
-            "Name": "Counter-Terrorist Tacticle Pants",
+            "Name": "Counter-Terrorist Tactical Pants",
             "PrefabName": "CounterTerrorist_LB",
             "Description": null,
             "LevelLock": 0,
@@ -1825,8 +4740,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 20,
+            "ArmorWeight": 10,
             "ItemClass": 15,
             "ID": 1031,
             "Name": "Kongregate Jacket",
@@ -1853,8 +4768,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1032,
             "Name": "Counter-Terrorist Jacket [France]",
@@ -1881,8 +4796,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1033,
             "Name": "Counter-Terrorist Jacket [Germany]",
@@ -1909,8 +4824,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1034,
             "Name": "Counter-Terrorist Jacket [England]",
@@ -1937,8 +4852,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1035,
             "Name": "Counter-Terrorist Jacket [Russia]",
@@ -1965,8 +4880,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1036,
             "Name": "Counter-Terrorist Jacket [USA]",
@@ -1993,8 +4908,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1037,
             "Name": "Admin Shirt",
@@ -2021,8 +4936,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1038,
             "Name": "Beta Hero Shirt",
@@ -2049,8 +4964,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1039,
             "Name": "Dove Shirt",
@@ -2077,8 +4992,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1040,
             "Name": "Global Moderator Shirt",
@@ -2105,8 +5020,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1041,
             "Name": "Moderator Shirt",
@@ -2133,8 +5048,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1042,
             "Name": "QA Shirt",
@@ -2161,8 +5076,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1043,
             "Name": "Green Shirt",
@@ -2189,8 +5104,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1044,
             "Name": "Clan Shirt [SLD]",
@@ -2217,8 +5132,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1045,
             "Name": "Clan Shirt [DED]",
@@ -2245,8 +5160,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1046,
             "Name": "Clan Shirt [C4C]",
@@ -2273,8 +5188,8 @@
         },
         {
             "ItemType": 3,
-            "ArmorPoints": 100,
-            "ArmorWeight": 0,
+            "ArmorPoints": 60,
+            "ArmorWeight": 20,
             "ItemClass": 15,
             "ID": 1047,
             "Name": "Clan Shirt [ST6IX]",
@@ -2655,7 +5570,7 @@
                     "Price": 0,
                     "Currency": 1,
                     "Discount": 0,
-                    "Amount": 1,
+                    "Amount": 199,
                     "PackType": 0,
                     "Duration": 5,
                     "IsConsumable": true

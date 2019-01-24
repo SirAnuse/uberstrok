@@ -366,19 +366,30 @@ namespace UberStrok.Realtime.Server.Game
             }
         }
 
+        protected override void OnEmitQuickItem(GamePeer peer, Vector3 origin, Vector3 direction, int itemId, byte playerNumber, int projectileID)
+        {
+            var userCmid = peer.Actor.Cmid;
+            foreach (var otherPeer in Peers)
+            {
+                if (otherPeer.Actor.Cmid != userCmid)
+                    otherPeer.Events.Game.SendEmitQuickItem(userCmid, origin, direction, itemId, playerNumber, projectileID);
+            }
+        }
+
         protected override void OnEmitProjectile(GamePeer peer, Vector3 origin, Vector3 direction, byte slot, int projectileId, bool explode)
         {
             var shooterCmid = peer.Actor.Cmid;
+
+            var weaponId = peer.Actor.Info.CurrentWeaponID;
+            var weapon = default(UberStrikeItemWeaponView);
+
+            if (ShopManager.WeaponItems.TryGetValue(weaponId, out weapon))
+                peer.IncrementShotsFired(weapon.ItemClass, weaponId);
+            else
+                s_log.Debug($"Unable to find weapon with ID {weaponId}");
+
             foreach (var otherPeer in Peers)
             {
-                var weaponId = peer.Actor.Info.CurrentWeaponID;
-                var weapon = default(UberStrikeItemWeaponView);
-
-                if (ShopManager.WeaponItems.TryGetValue(weaponId, out weapon))
-                    peer.IncrementShotsFired(weapon.ItemClass, weaponId);
-                else
-                    s_log.Debug($"Unable to find weapon with ID {weaponId}");
-
                 if (otherPeer.Actor.Cmid != shooterCmid)
                     otherPeer.Events.Game.SendEmitProjectile(shooterCmid, origin, direction, slot, projectileId, explode);
             }

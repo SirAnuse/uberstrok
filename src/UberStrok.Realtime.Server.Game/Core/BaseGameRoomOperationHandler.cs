@@ -14,6 +14,7 @@ namespace UberStrok.Realtime.Server.Game
         protected abstract void OnPowerUpPicked(GamePeer peer, int pickupId, byte type, byte value);
         protected abstract void OnRemoveProjectile(GamePeer peer, int projectileId, bool explode);
         protected abstract void OnEmitProjectile(GamePeer peer, Vector3 origin, Vector3 direction, byte slot, int projectileId, bool explode);
+        protected abstract void OnEmitQuickItem(GamePeer peer, Vector3 origin, Vector3 direction, int itemId, byte playerNumber, int projectileID);
         protected abstract void OnRespawnRequest(GamePeer peer);
         protected abstract void OnExplosionDamage(GamePeer peer, int target, byte slot, byte distance, Vector3 force);
         protected abstract void OnDirectHitDamage(GamePeer peer, int target, byte bodyPart, byte bullets);
@@ -36,6 +37,10 @@ namespace UberStrok.Realtime.Server.Game
             var operation = (IGameRoomOperationsType)opCode;
             switch (operation)
             {
+                case IGameRoomOperationsType.EmitQuickItem:
+                    EmitQuickItem(peer, bytes);
+                    break;
+
                 case IGameRoomOperationsType.PowerUpPicked:
                     PowerUpPicked(peer, bytes);
                     break;
@@ -144,6 +149,17 @@ namespace UberStrok.Realtime.Server.Game
             var explode = BooleanProxy.Deserialize(bytes);
 
             OnRemoveProjectile(peer, projectileId, explode);
+        }
+
+        private void EmitQuickItem(GamePeer peer, MemoryStream bytes)
+        {
+            var origin = Vector3Proxy.Deserialize(bytes);
+            var direction = Vector3Proxy.Deserialize(bytes);
+            var itemId = Int32Proxy.Deserialize(bytes);
+            var playerNumber = ByteProxy.Deserialize(bytes);
+            var projectileID = Int32Proxy.Deserialize(bytes);
+
+            OnEmitQuickItem(peer, origin, direction, itemId, playerNumber, projectileID);
         }
 
         private void EmitProjectile(GamePeer peer, MemoryStream bytes)
