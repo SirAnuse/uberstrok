@@ -131,17 +131,20 @@ namespace UberStrok.Realtime.Server.Game
             actorView.Gear[4] = player.Loadout.UpperBody;
             actorView.Gear[5] = player.Loadout.LowerBody;
             actorView.Gear[6] = player.Loadout.Boots;
-            
+
 
             // Calculate armor capacity
+            byte apCap = 0;
             foreach (var armor in actorView.Gear)
             {
                 var gear = default(UberStrikeItemGearView);
                 if (Room.ShopManager.GearItems.TryGetValue(armor, out gear))
-                    actorView.ArmorPointCapacity = (byte)Math.Min(200, actorView.ArmorPointCapacity + gear.ArmorPoints);
+                    apCap = (byte)Math.Min(200, actorView.ArmorPointCapacity + gear.ArmorPoints);
                 else
                     s_log.Debug($"Could not find gear with ID {armor}.");
             }
+            // Set ArmorPointCapacity to the calculated value
+            actorView.ArmorPointCapacity = apCap;
             // Set armor on spawn to the max capacity
             actorView.ArmorPoints = actorView.ArmorPointCapacity;
 
