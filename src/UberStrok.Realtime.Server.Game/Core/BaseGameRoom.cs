@@ -165,6 +165,10 @@ namespace UberStrok.Realtime.Server.Game
             byte apCap = 0;
             foreach (var armor in actorView.Gear)
             {
+                // don't attempt to calculate empty slot
+                if (armor == 0)
+                    continue;
+
                 var gear = default(UberStrikeItemGearView);
                 if (ShopManager.GearItems.TryGetValue(armor, out gear))
                     apCap = (byte)Math.Min(200, actorView.ArmorPointCapacity + gear.ArmorPoints);

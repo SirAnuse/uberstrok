@@ -80,7 +80,7 @@ namespace UberStrok.Realtime.Server.Game
                     foreach (var otherPeer in _room.Peers)
                         otherPeer.Events.Game.SendPowerUpPicked(_respawning[i], 0);
                     
-                    s_log.Debug($"Respawned power-up with ID: {_respawning[i]}");
+                    //s_log.Debug($"Respawned power-up with ID: {_respawning[i]}");
                     _respawning.RemoveAt(i);
                 }
                 else

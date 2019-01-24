@@ -126,6 +126,10 @@ namespace UberStrok.Realtime.Server.Game
                     // Armor weight. Max armor absorption is 72% (two armor pieces of 20 weight)
                     foreach (var armor in player.Actor.Info.Gear)
                     {
+                        // don't attempt to calculate empty slot
+                        if (armor == 0)
+                            continue;
+
                         var gear = default(UberStrikeItemGearView);
                         if (ShopManager.GearItems.TryGetValue(armor, out gear))
                         {
@@ -298,6 +302,10 @@ namespace UberStrok.Realtime.Server.Game
                     // Armor weight. Max armor absorption is 72% (two armor pieces of 20 weight)
                     foreach (var armor in player.Actor.Info.Gear)
                     {
+                        // don't attempt to calculate empty slot
+                        if (armor == 0)
+                            continue;
+
                         var gear = default(UberStrikeItemGearView);
                         if (ShopManager.GearItems.TryGetValue(armor, out gear))
                         {
