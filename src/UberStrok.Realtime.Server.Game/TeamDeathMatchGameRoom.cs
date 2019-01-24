@@ -126,7 +126,7 @@ namespace UberStrok.Realtime.Server.Game
                         RedTeamScore--;
                     else
                         RedTeamScore++;
-                    RedTeamScore++;
+
                     if (RedTeamScore >= killReq)
                     {
                         OnMatchEnded(new EventArgs());
