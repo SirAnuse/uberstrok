@@ -28,3 +28,5 @@ photon/
 
 # VIM
 *.swp
+src/UberStrok.WebServices/configs/main.json
+src/UberStrok.WebServices/configs/game/servers.json
