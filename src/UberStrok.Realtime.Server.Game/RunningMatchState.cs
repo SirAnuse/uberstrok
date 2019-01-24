@@ -26,8 +26,8 @@ namespace UberStrok.Realtime.Server.Game
             Room.PlayerKilled += OnPlayerKilled;
 
             /* Calculate the time when the games ends (in system ticks). */
-            s_log.Debug("Setting Room.EndTime.");
             Room.EndTime = Environment.TickCount + Room.View.TimeLimit * 1000;
+            Room.HasMatchEnded = false;
 
             foreach (var player in Room.Players)
                 player.State.Set(PeerState.Id.Playing);
@@ -142,6 +142,7 @@ namespace UberStrok.Realtime.Server.Game
             e.Player.Actor.Info.PlayerState &= ~PlayerStates.Dead;
 
             // Calculate armor capacity
+            byte apCap = 0;
             foreach (var armor in e.Player.Actor.Info.Gear)
             {
                 // don't attempt to calculate empty slot
@@ -150,10 +151,12 @@ namespace UberStrok.Realtime.Server.Game
 
                 var gear = default(UberStrikeItemGearView);
                 if (Room.ShopManager.GearItems.TryGetValue(armor, out gear))
-                    e.Player.Actor.Info.ArmorPointCapacity = (byte)Math.Min(200, e.Player.Actor.Info.ArmorPointCapacity + gear.ArmorPoints);
+                    apCap = (byte)Math.Min(200, e.Player.Actor.Info.ArmorPointCapacity + gear.ArmorPoints);
                 else
                     s_log.Debug($"Could not find gear with ID {armor}.");
             }
+            // Set ArmorPointCapacity to the calculated value
+            e.Player.Actor.Info.ArmorPointCapacity = apCap;
             // Set armor on spawn to the max capacity
             e.Player.Actor.Info.ArmorPoints = e.Player.Actor.Info.ArmorPointCapacity;
 

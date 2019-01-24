@@ -247,8 +247,8 @@ namespace UberStrok.Realtime.Server.Game
             peer.Room = null;
         }
 
-        public bool hasMatchEnded = false;
-        public bool failsafe = true;
+        public bool HasMatchEnded = false;
+        public bool Failsafe = true;
         public void StartLoop()
         {
             _loop.Start(
@@ -256,18 +256,18 @@ namespace UberStrok.Realtime.Server.Game
                     State.Update();
 
                     // 10 seconds failsafe.
-                    if (failsafe)
+                    if (Failsafe)
                     {
                         EndTime = Environment.TickCount + 10 * 1000;
-                        failsafe = false;
+                        Failsafe = false;
                     }
 
                     // End match due to countdown.
                     if (Environment.TickCount > EndTime
-                    && !hasMatchEnded)
+                    && !HasMatchEnded)
                     {
                         OnMatchEnded(new EventArgs());
-                        hasMatchEnded = true;
+                        HasMatchEnded = true;
                     }
                 },
                 (Exception ex) => {
