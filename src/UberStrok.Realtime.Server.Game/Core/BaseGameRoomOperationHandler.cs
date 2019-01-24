@@ -13,6 +13,7 @@ namespace UberStrok.Realtime.Server.Game
 
         protected abstract void OnPowerUpPicked(GamePeer peer, int pickupId, byte type, byte value);
         protected abstract void OnRemoveProjectile(GamePeer peer, int projectileId, bool explode);
+        protected abstract void OnSwitchTeam(GamePeer peer);
         protected abstract void OnEmitProjectile(GamePeer peer, Vector3 origin, Vector3 direction, byte slot, int projectileId, bool explode);
         protected abstract void OnEmitQuickItem(GamePeer peer, Vector3 origin, Vector3 direction, int itemId, byte playerNumber, int projectileID);
         protected abstract void OnRespawnRequest(GamePeer peer);
@@ -37,6 +38,10 @@ namespace UberStrok.Realtime.Server.Game
             var operation = (IGameRoomOperationsType)opCode;
             switch (operation)
             {
+                case IGameRoomOperationsType.SwitchTeam:
+                    SwitchTeam(peer, bytes);
+                    break;
+
                 case IGameRoomOperationsType.EmitQuickItem:
                     EmitQuickItem(peer, bytes);
                     break;
@@ -149,6 +154,11 @@ namespace UberStrok.Realtime.Server.Game
             var explode = BooleanProxy.Deserialize(bytes);
 
             OnRemoveProjectile(peer, projectileId, explode);
+        }
+
+        private void SwitchTeam(GamePeer peer, MemoryStream bytes)
+        {
+            OnSwitchTeam(peer);
         }
 
         private void EmitQuickItem(GamePeer peer, MemoryStream bytes)

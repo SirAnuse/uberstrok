@@ -374,6 +374,46 @@ namespace UberStrok.Realtime.Server.Game
             }
         }
 
+        protected override void OnSwitchTeam(GamePeer peer)
+        {
+            // Tally teams
+            int redTeam = 0;
+            int blueTeam = 0;
+            foreach (var player in Players)
+            {
+                if (player.Actor.Team == TeamID.RED)
+                    redTeam++;
+                else if (player.Actor.Team == TeamID.BLUE)
+                    blueTeam++;
+            }
+
+            TeamID targetTeam = TeamID.NONE;
+            if (peer.Actor.Team == TeamID.BLUE)
+                targetTeam = TeamID.RED;
+            else if (peer.Actor.Team == TeamID.RED)
+                targetTeam = TeamID.BLUE;
+
+            if (redTeam == blueTeam)
+                return;
+            else if (targetTeam == TeamID.RED && redTeam > blueTeam)
+                return;
+            else if (targetTeam == TeamID.BLUE && blueTeam > redTeam)
+                return;
+
+            peer.Actor.Team = targetTeam;
+            peer.State.Set(PeerState.Id.Killed);
+            OnPlayerKilled(new PlayerKilledEventArgs
+            {
+                AttackerCmid = peer.Actor.Cmid,
+                VictimCmid = peer.Actor.Cmid,
+                ItemClass = UberStrikeItemClass.WeaponMachinegun,
+                Part = BodyPart.Body,
+            });
+
+            foreach (var player in Players)
+                player.Events.Game.SendPlayerChangedTeam(peer.Actor.Cmid, targetTeam);
+        }
+
         protected override void OnEmitQuickItem(GamePeer peer, Vector3 origin, Vector3 direction, int itemId, byte playerNumber, int projectileID)
         {
             var userCmid = peer.Actor.Cmid;

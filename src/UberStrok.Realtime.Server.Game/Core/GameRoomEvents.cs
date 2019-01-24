@@ -44,6 +44,17 @@ namespace UberStrok.Realtime.Server.Game
                 SendEvent((byte)IGameRoomEventsType.ResetAllPowerups, bytes);
         }
 
+        public void SendPlayerChangedTeam(int cmid, TeamID team)
+        {
+            using (var bytes = new MemoryStream())
+            {
+                Int32Proxy.Serialize(bytes, cmid);
+                EnumProxy<TeamID>.Serialize(bytes, team);
+
+                SendEvent((byte)IGameRoomEventsType.PlayerChangedTeam, bytes);
+            }
+        }
+
         public void SendPlayerHit(Vector3 force)
         {
             using (var bytes = new MemoryStream())
