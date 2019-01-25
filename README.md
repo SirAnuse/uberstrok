@@ -1,4 +1,7 @@
 ## UberStrok
+My own fork of UberStrok.
+**DO NOT** use the master branch. It is almost completely broken right now. Use the 0.1.0-alpha branch.
+
 An effort to write a shitty UberStrike back-end implementation intended for educational purposes.
 
 #### Note
