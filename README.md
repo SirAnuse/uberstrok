@@ -4,7 +4,6 @@ The master branch lacks a lot of features, and is hard to get working in the fir
 Use the [v0.1.0-alpha branch](https://github.com/SirAnuse/uberstrok/tree/v0.1.0-alpha) instead!<br>
 Despite the fact it *sounds* older, it is far more feature rich, but instead comes with a spaghetti-laden codebase.
 **Until the abstraction (being done in the master branch) is complete, use the alpha branch. You do NOT want to use the master branch in its' current state.**
-The master branch is currently undergoing abstraction.
 
 An effort to write a shitty UberStrike back-end implementation intended for educational purposes.
 
