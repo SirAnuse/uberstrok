@@ -6,7 +6,9 @@ namespace UberStrok.Core.Views
 	[Serializable]
 	public class ApplicationConfigurationView
 	{
-		public int MaxLevel { get; set; }
+        public Dictionary<int, int> XpRequiredPerLevel { get; set; }
+
+        public int MaxLevel { get; set; }
 		public int MaxXp { get; set; }
 		public int PointsBaseLoser { get; set; }
 		public int PointsBaseWinner { get; set; }
@@ -23,7 +25,6 @@ namespace UberStrok.Core.Views
 		public int XpNutshot { get; set; }
 		public int XpPerMinuteLoser { get; set; }
 		public int XpPerMinuteWinner { get; set; }
-		public Dictionary<int, int> XpRequiredPerLevel { get; set; }
 		public int XpSmackdown { get; set; }
 	}
 }

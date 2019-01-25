@@ -9132,7 +9132,10 @@
             ],
             "IsForSale": true,
             "ShopHighlightType": 1,
-            "CustomProperties": { },
+            "CustomProperties": {
+				"DamageEffectFlag": 1,
+				"DamageEffectValue": 1
+			},
             "ItemProperties": { }
         },
         {

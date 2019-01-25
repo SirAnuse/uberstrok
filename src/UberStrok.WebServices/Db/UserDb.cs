@@ -121,7 +121,7 @@ namespace UberStrok.WebServices.Db
             if (_steamId2Cmid == null)
                 _steamId2Cmid = new Dictionary<string, int>();
 
-            var json = JsonConvert.SerializeObject(_steamId2Cmid);
+            var json = JsonConvert.SerializeObject(_steamId2Cmid, Formatting.Indented);
             File.WriteAllText("data/steam_id.json", json);
         }
     }

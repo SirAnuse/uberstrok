@@ -2,7 +2,6 @@
 
 namespace UberStrok.Core.Common
 {
-
     [Flags]
     public enum DamageEffectType
     {

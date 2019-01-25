@@ -222,6 +222,7 @@ namespace UberStrok.Realtime.Server.Game
             ret.PlayerStatsBestPerLife = GetBestPerLifeStats();
             ret.PlayerXpEarned = CalculateXp();
             ret.MostValuablePlayers = MVPs;
+            ret.TimeInGameMinutes = Room.View.TimeLimit;
             return ret;
         }
 

@@ -37,7 +37,7 @@ namespace UberStrok.WebServices.Db
                 throw new ArgumentException("CMID of PublicProfileView must be greater than 0.");
 
             var path = Path.Combine(ROOT_DIR, cmid + ".json");
-            var json = JsonConvert.SerializeObject(view);
+            var json = JsonConvert.SerializeObject(view, Formatting.Indented);
             File.WriteAllText(path, json);
         }
     }
