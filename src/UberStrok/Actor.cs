@@ -11,7 +11,10 @@ namespace UberStrok
 
         public void Join(Room room)
         {
-            _room = room ?? throw new ArgumentNullException(nameof(room));
+            if (room == null)
+                throw new ArgumentNullException(nameof(room));
+
+            _room = room;
             _room.DoJoin(this);
         }
 

@@ -12,7 +12,10 @@ namespace UberStrok.Realtime.Server.Comm
 
         public CommActor(CommPeer peer)
         {
-            _peer = peer ?? throw new ArgumentNullException(nameof(peer));
+            if (peer == null)
+                throw new ArgumentNullException(nameof(peer));
+
+            _peer = peer;
         }
 
         public override Command Receive()
