@@ -20,7 +20,9 @@ And because [dropshot](https://www.github.com/festivaldev/dropshot) seem to be i
 to continue on my own.
 
 #### Does multiplayer work?
-Yes, however only CuberStrike in Team Deathmatch mode is supported.
+Yes, however only CuberStrike in Team Deathmatch mode is supported. 
+
+It is highly recommended you use the [v0.1.0-alpha branch](https://github.com/SirAnuse/uberstrok/tree/v0.1.0-alpha) for gameplay purposes, as it contains configurations for all maps, and support for Deathmatch.
  
 #### Are features missing?
 Yes.
