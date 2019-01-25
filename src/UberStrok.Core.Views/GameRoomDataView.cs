@@ -1,5 +1,6 @@
 ﻿using System;
 using UberStrok.Core.Common;
+using System.Collections.Generic;
 
 namespace UberStrok.Core.Views
 {
