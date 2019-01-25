@@ -1,4 +1,6 @@
 ## UberStrok
+Designed to be paired with [uberstrike-assemblies](https://github.com/SirAnuse/uberstrike-assemblies).
+
 An effort to write a shitty UberStrike back-end implementation intended for educational purposes.
 
 ### Why
