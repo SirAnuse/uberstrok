@@ -10,8 +10,6 @@ namespace UberStrok.Realtime.Server.Game
 {
     public abstract partial class BaseGameRoom : BaseGameRoomOperationHandler, IRoom<GamePeer>
     {
-        double baseArmorAbsorption = 0.50;
-
         public override void OnDisconnect(GamePeer peer, DisconnectReason reasonCode, string reasonDetail)
         {
             Leave(peer);
@@ -25,6 +23,7 @@ namespace UberStrok.Realtime.Server.Game
                 Update the actor's team + other data and register the peer in the player list.
                 Update the number of connected players while we're at it.
              */
+
             peer.Actor.Team = team;
             peer.Actor.Info.Health = 100;
             peer.Actor.Info.Ping = (ushort)(peer.RoundTripTime / 2);
@@ -122,22 +121,25 @@ namespace UberStrok.Realtime.Server.Game
 
                     /* TODO: Find out the damage effect type (slow down -> needler) & stuffs. */
 
-                    var weightedArmorAbsorption = baseArmorAbsorption;
+                    var weightedArmorAbsorption = _armorAbsorb;
                     // Armor weight. Max armor absorption is 72% (two armor pieces of 20 weight)
-                    foreach (var armor in player.Actor.Info.Gear)
+                    if (View.GameFlags.DefenseBonus)
                     {
-                        // don't attempt to calculate empty slot
-                        if (armor == 0)
-                            continue;
-
-                        var gear = default(UberStrikeItemGearView);
-                        if (ShopManager.GearItems.TryGetValue(armor, out gear))
+                        foreach (var armor in player.Actor.Info.Gear)
                         {
-                            if (gear.ArmorWeight > 0)
-                                weightedArmorAbsorption *= 1 + (gear.ArmorWeight / 100f);
+                            // don't attempt to calculate empty slot
+                            if (armor == 0)
+                                continue;
+
+                            var gear = default(UberStrikeItemGearView);
+                            if (ShopManager.GearItems.TryGetValue(armor, out gear))
+                            {
+                                if (gear.ArmorWeight > 0)
+                                    weightedArmorAbsorption *= 1 + (gear.ArmorWeight / 100f);
+                            }
+                            else
+                                s_log.Debug($"Could not find gear with ID {armor}.");
                         }
-                        else
-                            s_log.Debug($"Could not find gear with ID {armor}.");
                     }
 
                     /* Don't mess with rocket jumps. */
@@ -298,22 +300,25 @@ namespace UberStrok.Realtime.Server.Game
                      * Change 'armorAbsorbPercent' to modify effective health given by armor.
                      * E.g. currently, 100 armor is equal to 66 extra health (if you are on at least 33% of your armor in health)
                      */
-                    var weightedArmorAbsorption = baseArmorAbsorption;
+                    var weightedArmorAbsorption = _armorAbsorb;
                     // Armor weight. Max armor absorption is 72% (two armor pieces of 20 weight)
-                    foreach (var armor in player.Actor.Info.Gear)
+                    if (View.GameFlags.DefenseBonus)
                     {
-                        // don't attempt to calculate empty slot
-                        if (armor == 0)
-                            continue;
-
-                        var gear = default(UberStrikeItemGearView);
-                        if (ShopManager.GearItems.TryGetValue(armor, out gear))
+                        foreach (var armor in player.Actor.Info.Gear)
                         {
-                            if (gear.ArmorWeight > 0)
-                                weightedArmorAbsorption *= 1 + (gear.ArmorWeight / 100f);
+                            // don't attempt to calculate empty slot
+                            if (armor == 0)
+                                continue;
+
+                            var gear = default(UberStrikeItemGearView);
+                            if (ShopManager.GearItems.TryGetValue(armor, out gear))
+                            {
+                                if (gear.ArmorWeight > 0)
+                                    weightedArmorAbsorption *= 1 + (gear.ArmorWeight / 100f);
+                            }
+                            else
+                                s_log.Debug($"Could not find gear with ID {armor}.");
                         }
-                        else
-                            s_log.Debug($"Could not find gear with ID {armor}.");
                     }
 
                     if (player.Actor.Info.ArmorPoints > 0)

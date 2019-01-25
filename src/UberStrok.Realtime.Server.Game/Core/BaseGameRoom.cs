@@ -36,6 +36,8 @@ namespace UberStrok.Realtime.Server.Game
         private readonly PowerUpManager _powerUpManager;
         /* Manages the spawn of players. */
         private readonly SpawnManager _spawnManager;
+        /* Base number of armor absorption. */
+        private readonly double _armorAbsorb;
 
         /* Keep refs to ReadOnlyCollections to be a little bit GC friendly. */
         private readonly IReadOnlyList<GamePeer> _peersReadOnly;
@@ -69,6 +71,8 @@ namespace UberStrok.Realtime.Server.Game
             _state.Register(MatchState.Id.WaitingForPlayers, new WaitingForPlayersMatchState(this));
             _state.Register(MatchState.Id.Countdown, new CountdownMatchState(this));
             _state.Register(MatchState.Id.Running, new RunningMatchState(this));
+
+            _armorAbsorb = 0.66;
 
             _state.Set(MatchState.Id.WaitingForPlayers);
         }

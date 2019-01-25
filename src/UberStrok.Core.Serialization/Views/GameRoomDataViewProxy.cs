@@ -12,7 +12,7 @@ namespace UberStrok.Core.Serialization.Views
             using (var bytes = new MemoryStream())
             {
                 Int32Proxy.Serialize(bytes, instance.ConnectedPlayers);
-                Int32Proxy.Serialize(bytes, instance.GameFlags);
+                Int32Proxy.Serialize(bytes, instance.GameFlags.GetFlags());
                 EnumProxy<GameModeType>.Serialize(bytes, instance.GameMode);
 
                 if (instance.Guid != null)
@@ -51,7 +51,7 @@ namespace UberStrok.Core.Serialization.Views
             int mask = Int32Proxy.Deserialize(bytes);
             var view = new GameRoomDataView();
             view.ConnectedPlayers = Int32Proxy.Deserialize(bytes);
-            view.GameFlags = Int32Proxy.Deserialize(bytes);
+            view.GameFlags.SetFlags(Int32Proxy.Deserialize(bytes));
             view.GameMode = EnumProxy<GameModeType>.Deserialize(bytes);
 
             if ((mask & 1) != 0)

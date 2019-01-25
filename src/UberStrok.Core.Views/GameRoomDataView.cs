@@ -11,7 +11,7 @@ namespace UberStrok.Core.Views
         public int PlayerLimit { get; set; }
         public int TimeLimit { get; set; }
         public int KillLimit { get; set; }
-        public int GameFlags { get; set; }
+        public GameFlagsView GameFlags { get; set; }
         public int MapID { get; set; }
         public byte LevelMin { get; set; }
         public byte LevelMax { get; set; }
