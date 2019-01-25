@@ -42,6 +42,19 @@ namespace UberStrok.WebServices.Core
             return view;
         }
 
+        public override PlayerStatisticsView OnGetPlayerStats(string authToken)
+        {
+            var member = Context.Users.GetMember(authToken);
+            if (member == null)
+            {
+                Log.Error("An unidentified AuthToken was passed.");
+                return null;
+            }
+
+            var view = Context.Users.Db.Stats.Load(member.PublicProfile.Cmid);
+            return view;
+        }
+
         public override UberstrikeUserView OnGetMember(string authToken)
         {
             // Get loaded member in memory using the auth token.

@@ -10,8 +10,6 @@ namespace UberStrok.WebServices.Db
 {
     public class UserDb
     {
-        private readonly static ILog Log = LogManager.GetLogger(typeof(UserDb).Name);
-
         public UserDb()
         {
             if (!Directory.Exists("data"))
@@ -21,6 +19,7 @@ namespace UberStrok.WebServices.Db
             _walletsDb = new WalletDb();
             _inventoriesDb = new InventoryDb();
             _loadoutsDb = new LoadoutDb();
+            _statsDb = new StatsDb();
 
             if (!LoadSteamIds())
             {
@@ -36,11 +35,13 @@ namespace UberStrok.WebServices.Db
         private readonly WalletDb _walletsDb;
         private readonly InventoryDb _inventoriesDb;
         private readonly LoadoutDb _loadoutsDb;
+        private readonly StatsDb _statsDb;
 
         public ProfileDb Profiles => _profilesDb;
         public WalletDb Wallets => _walletsDb;
         public InventoryDb Inventories => _inventoriesDb;
         public LoadoutDb Loadouts => _loadoutsDb;
+        public StatsDb Stats => _statsDb;
 
         public bool Link(string steamId, MemberView member)
         {
@@ -58,6 +59,20 @@ namespace UberStrok.WebServices.Db
             // Save steam Ids after we done linking them.
             SaveSteamIds();
             return true;
+        }
+
+        public PlayerStatisticsView LoadStats(string steamId)
+        {
+            if (steamId == null)
+                throw new ArgumentNullException(nameof(steamId));
+
+            // Try to find a linked CMID to the specified Steam ID.
+            // If it does not, then return null, else load member with that
+            // linked CMID.
+            int cmid;
+            if (!_steamId2Cmid.TryGetValue(steamId, out cmid))
+                return null;
+            return Stats.Load(cmid);
         }
 
         public MemberView LoadMember(string steamId)

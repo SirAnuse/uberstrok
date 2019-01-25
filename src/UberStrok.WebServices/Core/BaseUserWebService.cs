@@ -23,6 +23,7 @@ namespace UberStrok.WebServices.Core
         public abstract MemberOperationResult OnSetLoaduout(string authToken, LoadoutView loadoutView);
         public abstract UberstrikeUserView OnGetMember(string authToken);
         public abstract LoadoutView OnGetLoadout(string authToken);
+        public abstract PlayerStatisticsView OnGetPlayerStats(string authToken);
         public abstract List<ItemInventoryView> OnGetInventory(string authToken);
 
         byte[] IUserWebServiceContract.ChangeMemberName(byte[] data)

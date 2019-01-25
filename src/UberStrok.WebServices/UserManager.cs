@@ -80,11 +80,20 @@ namespace UberStrok.WebServices
                 memberItems
             );
 
+            // Just set everything to zero
+            // They don't have stats so it's the truth
+            var playerStats = new PlayerStatisticsView(
+                cmid, 0, 0, 0, 0, 0, 0,
+                personalRecord: new PlayerPersonalRecordStatisticsView(),
+                weaponStatistics: new PlayerWeaponStatisticsView()
+                );
+
             // Save the member.
             Db.Profiles.Save(publicProfile);
             Db.Wallets.Save(memberWallet);
             Db.Inventories.Save(cmid, memberInventories);
             Db.Loadouts.Save(memberLoadout);
+            Db.Stats.Save(playerStats);
 
             Db.SetNextCmid(_nextCmid);
 

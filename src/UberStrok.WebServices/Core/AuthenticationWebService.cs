@@ -90,8 +90,8 @@ namespace UberStrok.WebServices.Core
             // because why not.
             if (member.PublicProfile.EmailAddressStatus == EmailAddressStatus.Unverified)
                 incomplete = true;
-
             var newAuthToken = Context.Users.LogInUser(member);
+            var playerStats = Context.Users.Db.LoadStats(steamId);
             var view = new MemberAuthenticationResultView
             {
                 MemberAuthenticationResult = result,
@@ -100,12 +100,7 @@ namespace UberStrok.WebServices.Core
                 ServerTime = DateTime.Now,
 
                 MemberView = member,
-                PlayerStatisticsView = new PlayerStatisticsView
-                {
-                    Cmid = member.PublicProfile.Cmid,
-                    PersonalRecord = new PlayerPersonalRecordStatisticsView(),
-                    WeaponStatistics = new PlayerWeaponStatisticsView()
-                },
+                PlayerStatisticsView = playerStats
             };
 
             Log.Info($"Logging in member {steamId}:{newAuthToken}");
