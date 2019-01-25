@@ -1,6 +1,10 @@
 ## UberStrok
-My own fork of UberStrok.
-**DO NOT** use the master branch. It is almost completely broken right now. Use the 0.1.0-alpha branch.
+### **WARNING! DO NOT USE THE MASTER BRANCH!** 
+The master branch lacks a lot of features, and is hard to get working in the first place!<br>
+Use the [v0.1.0-alpha branch](https://github.com/SirAnuse/uberstrok/tree/v0.1.0-alpha) instead!<br>
+Despite the fact it *sounds* older, it is far more feature rich, but instead comes with a spaghetti-laden codebase.
+**Until the abstraction (being done in the master branch) is complete, use the alpha branch. You do NOT want to use the master branch in its' current state.**
+The master branch is currently undergoing abstraction.
 
 An effort to write a shitty UberStrike back-end implementation intended for educational purposes.
 
@@ -18,7 +22,7 @@ mostly to be able to play this game again with some friends for the sake of nost
 
 And because [dropshot](https://www.github.com/festivaldev/dropshot) seem to be inactive, so I decided
 to continue on my own.
-
+Some Markdown text with <span style="color:blue">some *blue* text</span>.
 #### Does multiplayer work?
 Yes, however only CuberStrike in Team Deathmatch mode is supported. 
 
