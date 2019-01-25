@@ -21,7 +21,7 @@ mostly to be able to play this game again with some friends for the sake of nost
 
 And because [dropshot](https://www.github.com/festivaldev/dropshot) seem to be inactive, so I decided
 to continue on my own.
-Some Markdown text with <span style="color:blue">some *blue* text</span>.
+
 #### Does multiplayer work?
 Yes, however only CuberStrike in Team Deathmatch mode is supported. 
 
