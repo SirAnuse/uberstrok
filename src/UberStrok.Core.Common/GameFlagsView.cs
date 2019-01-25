@@ -7,11 +7,11 @@ namespace UberStrok.Core.Common
         {
             get
             {
-                return this.IsFlagSet(GameFlags.LowGravity);
+                return IsFlagSet(GameFlags.LowGravity);
             }
             set
             {
-                this.SetFlag(GameFlags.LowGravity, value);
+                SetFlag(GameFlags.LowGravity, value);
             }
         }
 
@@ -19,11 +19,11 @@ namespace UberStrok.Core.Common
         {
             get
             {
-                return this.IsFlagSet(GameFlags.NoArmor);
+                return IsFlagSet(GameFlags.NoArmor);
             }
             set
             {
-                this.SetFlag(GameFlags.NoArmor, value);
+                SetFlag(GameFlags.NoArmor, value);
             }
         }
 
@@ -31,11 +31,11 @@ namespace UberStrok.Core.Common
         {
             get
             {
-                return this.IsFlagSet(GameFlags.QuickSwitch);
+                return IsFlagSet(GameFlags.QuickSwitch);
             }
             set
             {
-                this.SetFlag(GameFlags.QuickSwitch, value);
+                SetFlag(GameFlags.QuickSwitch, value);
             }
         }
 
@@ -43,11 +43,11 @@ namespace UberStrok.Core.Common
         {
             get
             {
-                return this.IsFlagSet(GameFlags.MeleeOnly);
+                return IsFlagSet(GameFlags.MeleeOnly);
             }
             set
             {
-                this.SetFlag(GameFlags.MeleeOnly, value);
+                SetFlag(GameFlags.MeleeOnly, value);
             }
         }
 
@@ -55,11 +55,11 @@ namespace UberStrok.Core.Common
         {
             get
             {
-                return this.IsFlagSet(GameFlags.DefenseBonus);
+                return IsFlagSet(GameFlags.DefenseBonus);
             }
             set
             {
-                this.SetFlag(GameFlags.DefenseBonus, value);
+                SetFlag(GameFlags.DefenseBonus, value);
             }
         }
 

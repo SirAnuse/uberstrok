@@ -50,6 +50,7 @@ namespace UberStrok.Core.Serialization.Views
         {
             int mask = Int32Proxy.Deserialize(bytes);
             var view = new GameRoomDataView();
+            view.GameFlags = new GameFlagsView();
             view.ConnectedPlayers = Int32Proxy.Deserialize(bytes);
             view.GameFlags.SetFlags(Int32Proxy.Deserialize(bytes));
             view.GameMode = EnumProxy<GameModeType>.Deserialize(bytes);
