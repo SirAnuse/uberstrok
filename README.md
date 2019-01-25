@@ -1,5 +1,7 @@
 ## UberStrok
-Designed to be paired with [uberstrike-assemblies](https://github.com/SirAnuse/uberstrike-assemblies).
+This is a fork of [FICTURE7/uberstrok](https://github.com/FICTURE7/uberstrok). 
+
+This fork is designed to be paired with these custom assemblies, [uberstrike-assemblies](https://github.com/SirAnuse/uberstrike-assemblies). You do not need to use the patcher if you replace the current game assemblies with compiled versions of those ones.
 
 An effort to write a shitty UberStrike back-end implementation intended for educational purposes.
 
