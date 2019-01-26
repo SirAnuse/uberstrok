@@ -20,6 +20,7 @@ namespace UberStrok.WebServices.Core
         }
 
         private ApplicationConfigurationView _appConfig;
+        public ApplicationConfigurationView AppConfig => _appConfig;
 
         protected override AuthenticateApplicationView OnAuthenticateApplication(string clientVersion, ChannelType channelType, string publicKey)
         {

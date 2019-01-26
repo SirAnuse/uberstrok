@@ -11,6 +11,7 @@ namespace UberStrok.WebServices.Core
     public class UserWebService : BaseUserWebService
     {
         private readonly static ILog Log = LogManager.GetLogger(typeof(UserWebService).Name);
+        public ApplicationWebService AppService;
 
         public UserWebService(WebServiceContext ctx) : base(ctx)
         {
@@ -56,6 +57,13 @@ namespace UberStrok.WebServices.Core
             return view;
         }
 
+        public override ApplicationConfigurationView OnGetAppConfig()
+        {
+            // Get loaded AppConfig.
+            var view = AppService.AppConfig;
+            return view;
+        }
+
         public override UberstrikeUserView OnGetMember(string authToken)
         {
             // Get loaded member in memory using the auth token.
@@ -96,6 +104,22 @@ namespace UberStrok.WebServices.Core
             Context.Users.Db.Stats.Save(statsView);
             return MemberOperationResult.Ok;
         }
+
+        public override MemberOperationResult OnSetWallet(string authToken, MemberWalletView walletView)
+        {
+            var member = Context.Users.GetMember(authToken);
+            if (member == null)
+            {
+                Log.Error("An unidentified AuthToken was passed.");
+                return MemberOperationResult.InvalidData;
+            }
+
+            // Save straight up because we don't really care if the client is hacking.
+            // Stats at least. For now.
+            Context.Users.Db.Wallets.Save(walletView);
+            return MemberOperationResult.Ok;
+        }
+
 
         public override MemberOperationResult OnSetLoaduout(string authToken, LoadoutView loadoutView)
         {

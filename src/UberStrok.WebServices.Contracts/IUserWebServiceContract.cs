@@ -39,7 +39,13 @@ namespace UberStrok.WebServices.Contracts
         byte[] SetStats(byte[] data);
 
         [OperationContract]
+        byte[] SetWallet(byte[] data);
+
+        [OperationContract]
         byte[] GetMember(byte[] data);
+
+        [OperationContract]
+        byte[] GetAppConfig();
 
         [OperationContract]
         byte[] GetMemberSessionData(byte[] data);

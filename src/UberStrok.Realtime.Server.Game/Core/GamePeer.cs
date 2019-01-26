@@ -34,10 +34,12 @@ namespace UberStrok.Realtime.Server.Game
         // Save stats to their corresponding json file.
         public void SaveStats(EndOfMatchDataView data)
         {
-            PlayerStatisticsView stats = Web.GetMember().UberstrikeMemberView.PlayerStatisticsView;
+            var member = Web.GetMember();
+            var stats = member.UberstrikeMemberView.PlayerStatisticsView;
+            var wallet = member.CmuneMemberView.MemberWallet;
+
             stats.TimeSpentInGame += data.TimeInGameMinutes;
-            foreach (var i in data.PlayerXpEarned)
-                stats.Xp += i.Value;
+            
             #region OH GOD TAKE IT AWAY
             /* MACHINEGUN STATS */
             stats.WeaponStatistics.MachineGunTotalDamageDone += data.PlayerStatsTotal.MachineGunDamageDone;
@@ -76,6 +78,11 @@ namespace UberStrok.Realtime.Server.Game
             stats.WeaponStatistics.LauncherTotalShotsHit += data.PlayerStatsTotal.LauncherShotsHit;
 
             var best = data.PlayerStatsBestPerLife;
+            var total = data.PlayerStatsTotal;
+
+            stats.Xp += total.Xp;
+            wallet.Points += total.Points;
+
             // Yes, I could've used something like the following:
             // stats.PersonalRecord.MostArmorPickedUp = stats.PersonalRecord.MostArmorPickedUp < best.ArmorPickedUp ? stats.PersonalRecord.MostArmorPickedUp : best.ArmorPickedUp;
             // But the question is, should I have?
@@ -114,6 +121,7 @@ namespace UberStrok.Realtime.Server.Game
             #endregion
 
             Web.SetStats(stats);
+            Web.SetWallet(wallet);
         }
 
         public void IncrementShotsFired(UberStrikeItemClass itemClass, int weaponId, int shots)
@@ -303,27 +311,44 @@ namespace UberStrok.Realtime.Server.Game
             ret.HasWonMatch = hasWon;
             ret.MatchGuid = matchGuid;
             ret.MostEffecientWeaponId = GetMostEfficientWeaponId();
-            ret.PlayerStatsTotal = TotalStats;
             ret.PlayerStatsBestPerLife = GetBestPerLifeStats();
-            ret.PlayerXpEarned = CalculateXp();
             ret.MostValuablePlayers = MVPs;
             ret.TimeInGameMinutes = Room.View.TimeLimit;
+            // the client doesn't care about what is sent for PlayerXpEarned, it calculates it itself
+            ret.PlayerXpEarned = new Dictionary<byte, ushort>();
+            CalculateXp(ret, hasWon);
+            CalculatePoints(ret, hasWon);
+            ret.PlayerStatsTotal = TotalStats;
             return ret;
         }
 
-        public Dictionary<byte, ushort> CalculateXp()
+        private void CalculatePoints(EndOfMatchDataView data, bool winner)
         {
-            // TODO: Calculate XP earned.
-            Dictionary<byte, ushort> ret = new Dictionary<byte, ushort>
+            ApplicationConfigurationView appConfig = Web.GetAppConfig();
+            if (TotalStats.GetDamageDealt() > 0)
             {
-                { 1, 10 },
-                { 2, 20 },
-                { 3, 30 },
-                { 4, 40 },
-                { 5, 50 },
-                { 6, 60 }
-            };
-            return ret;
+                int num = (!data.HasWonMatch) ? appConfig.PointsBaseLoser : appConfig.PointsBaseWinner;
+                int num2 = (!data.HasWonMatch) ? appConfig.PointsPerMinuteLoser : appConfig.PointsPerMinuteWinner;
+                int num3 = Math.Max(0, TotalStats.GetKills()) * appConfig.PointsKill + Math.Max(0, TotalStats.Nutshots) * appConfig.PointsNutshot + Math.Max(0, TotalStats.Headshots) * appConfig.PointsHeadshot + Math.Max(0, TotalStats.MeleeKills) * appConfig.PointsSmackdown;
+                int num4 = (int)Math.Ceiling((float)(data.TimeInGameMinutes / 60 * num2));
+                int num5 = (int)Math.Ceiling((float)(data.TimeInGameMinutes / 60 * num2));
+                TotalStats.Points = (num + num3 + num4 + num5);
+            }
+        }
+
+        public void CalculateXp(EndOfMatchDataView data, bool winner)
+        {
+            ApplicationConfigurationView appConfig = Web.GetAppConfig();
+            // Calculate total XP earned.
+            if (TotalStats.GetDamageDealt() > 0)
+            {
+                int num = (!data.HasWonMatch) ? appConfig.XpBaseLoser : appConfig.XpBaseWinner;
+                int num2 = (!data.HasWonMatch) ? appConfig.XpPerMinuteLoser : appConfig.XpPerMinuteWinner;
+                int num3 = Math.Max(0, TotalStats.GetKills()) * appConfig.XpKill + Math.Max(0, TotalStats.Nutshots) * appConfig.XpNutshot + Math.Max(0, TotalStats.Headshots) * appConfig.XpHeadshot + Math.Max(0, TotalStats.MeleeKills) * appConfig.XpSmackdown;
+                int num4 = (int)Math.Ceiling((float)(data.TimeInGameMinutes / 60 * num2));
+                int num5 = (int)Math.Ceiling((float)(data.TimeInGameMinutes / 60 * num2));
+                TotalStats.Xp = (num + num3 + num4 + num5);
+            }
         }
 
         public StatsCollectionView GetBestPerLifeStats()

@@ -24,6 +24,27 @@ namespace UberStrok.WebServices.Client
             }
         }
 
+        public void SetWallet(string authToken, MemberWalletView walletView)
+        {
+            using (var bytes = new MemoryStream())
+            {
+                StringProxy.Serialize(bytes, authToken);
+                MemberWalletViewProxy.Serialize(bytes, walletView);
+
+                var data = Channel.SetWallet(bytes.ToArray());
+            }
+        }
+
+        public ApplicationConfigurationView GetAppConfig()
+        {
+            using (var bytes = new MemoryStream())
+            {
+                var data = Channel.GetAppConfig();
+                using (var inBytes = new MemoryStream(data))
+                    return ApplicationConfigurationViewProxy.Deserialize(inBytes);
+            }
+        }
+
         public UberstrikeUserView GetMember(string authToken)
         {
             using (var bytes = new MemoryStream())

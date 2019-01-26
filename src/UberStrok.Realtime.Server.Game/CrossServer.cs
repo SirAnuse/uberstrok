@@ -35,6 +35,25 @@ namespace UberStrok.Realtime.Server.Game
             client.SetPlayerStats(authToken, view);
         }
 
+        public void SetWallet(MemberWalletView view)
+        {
+            s_log.Debug($"Sending member {authToken} to the web server {webServer}");
+
+            // Retrieve user data from the web server.
+            var client = new UserWebServiceClient(webServer);
+            client.SetWallet(authToken, view);
+        }
+
+        public ApplicationConfigurationView GetAppConfig()
+        {
+            s_log.Debug($"Retrieving user data {authToken} from the web server {webServer}");
+
+            // Retrieve user data from the web server.
+            var client = new UserWebServiceClient(webServer);
+            var appConfig = client.GetAppConfig();
+            return appConfig;
+        }
+
         public UberstrikeUserView GetMember()
         {
             s_log.Debug($"Retrieving user data {authToken} from the web server {webServer}");

@@ -22,7 +22,9 @@ namespace UberStrok.WebServices.Core
         public abstract bool OnIsDuplicateMemberName(string username);
         public abstract MemberOperationResult OnSetLoaduout(string authToken, LoadoutView loadoutView);
         public abstract MemberOperationResult OnSetStats(string authToken, PlayerStatisticsView statsView);
+        public abstract MemberOperationResult OnSetWallet(string authToken, MemberWalletView userView);
         public abstract UberstrikeUserView OnGetMember(string authToken);
+        public abstract ApplicationConfigurationView OnGetAppConfig();
         public abstract LoadoutView OnGetLoadout(string authToken);
         public abstract PlayerStatisticsView OnGetPlayerStats(string authToken);
         public abstract List<ItemInventoryView> OnGetInventory(string authToken);
@@ -132,6 +134,25 @@ namespace UberStrok.WebServices.Core
             }
         }
 
+        byte[] IUserWebServiceContract.GetAppConfig()
+        {
+            try
+            {
+                using (var outBytes = new MemoryStream())
+                {
+                    var view = OnGetAppConfig();
+                    ApplicationConfigurationViewProxy.Serialize(outBytes, view);
+                    return outBytes.ToArray();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to handle GetAppConfig request:");
+                Log.Error(ex);
+                return null;
+            }
+        }
+
         byte[] IUserWebServiceContract.GetMember(byte[] data)
         {
             try
@@ -231,6 +252,31 @@ namespace UberStrok.WebServices.Core
             catch (Exception ex)
             {
                 Log.Error("Unable to handle IsDuplicateMemberName request:");
+                Log.Error(ex);
+                return null;
+            }
+        }
+
+        byte[] IUserWebServiceContract.SetWallet(byte[] data)
+        {
+            try
+            {
+                using (var bytes = new MemoryStream(data))
+                {
+                    var authToken = StringProxy.Deserialize(bytes);
+                    var walletView = MemberWalletViewProxy.Deserialize(bytes);
+
+                    var result = OnSetWallet(authToken, walletView);
+                    using (var outBytes = new MemoryStream())
+                    {
+                        EnumProxy<MemberOperationResult>.Serialize(outBytes, result);
+                        return outBytes.ToArray();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to handle SetStats request:");
                 Log.Error(ex);
                 return null;
             }

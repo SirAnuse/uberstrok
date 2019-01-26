@@ -24,6 +24,7 @@ namespace UberStrok.WebServices
             _authenticationService = new AuthenticationWebService(_ctx);
             _relationshipService = new RelationshipWebService(_ctx);
             _userService = new UserWebService(_ctx);
+            _userService.AppService = _applicationService;
             _shopService = new ShopWebService(_ctx);
 
             _services.Add(_applicationService);
