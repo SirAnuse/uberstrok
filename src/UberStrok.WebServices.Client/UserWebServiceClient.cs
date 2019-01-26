@@ -13,6 +13,17 @@ namespace UberStrok.WebServices.Client
             // Space
         }
 
+        public void SetPlayerStats(string authToken, PlayerStatisticsView statsView)
+        {
+            using (var bytes = new MemoryStream())
+            {
+                StringProxy.Serialize(bytes, authToken);
+                PlayerStatisticsViewProxy.Serialize(bytes, statsView);
+
+                var data = Channel.SetStats(bytes.ToArray());
+            }
+        }
+
         public UberstrikeUserView GetMember(string authToken)
         {
             using (var bytes = new MemoryStream())

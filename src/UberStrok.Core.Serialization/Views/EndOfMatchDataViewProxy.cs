@@ -10,7 +10,6 @@ namespace UberStrok.Core.Serialization.Views
 {
     public static class EndOfMatchDataViewProxy
     {
-        // Token: 0x060010BF RID: 4287 RVA: 0x00016980 File Offset: 0x00014B80
         public static void Serialize(Stream stream, EndOfMatchDataView instance)
         {
             int num = 0;
@@ -65,7 +64,6 @@ namespace UberStrok.Core.Serialization.Views
             }
         }
 
-        // Token: 0x060010C0 RID: 4288 RVA: 0x00016AB0 File Offset: 0x00014CB0
         public static EndOfMatchDataView Deserialize(Stream bytes)
         {
             int num = Int32Proxy.Deserialize(bytes);

@@ -31,45 +31,130 @@ namespace UberStrok.Realtime.Server.Game
             AddOperationHandler(new GamePeerOperationHandler());
         }
 
-        public void IncrementShotsFired(UberStrikeItemClass itemClass, int weaponId)
+        // Save stats to their corresponding json file.
+        public void SaveStats(EndOfMatchDataView data)
+        {
+            PlayerStatisticsView stats = Web.GetMember().UberstrikeMemberView.PlayerStatisticsView;
+            stats.TimeSpentInGame += data.TimeInGameMinutes;
+            foreach (var i in data.PlayerXpEarned)
+                stats.Xp += i.Value;
+            #region OH GOD TAKE IT AWAY
+            /* MACHINEGUN STATS */
+            stats.WeaponStatistics.MachineGunTotalDamageDone += data.PlayerStatsTotal.MachineGunDamageDone;
+            stats.WeaponStatistics.MachineGunTotalSplats += data.PlayerStatsTotal.MachineGunKills;
+            stats.WeaponStatistics.MachineGunTotalShotsFired += data.PlayerStatsTotal.MachineGunShotsFired;
+            stats.WeaponStatistics.MachineGunTotalShotsHit += data.PlayerStatsTotal.MachineGunShotsHit;
+            /* SHOTGUN STATS */
+            stats.WeaponStatistics.ShotgunTotalDamageDone += data.PlayerStatsTotal.ShotgunDamageDone;
+            stats.WeaponStatistics.ShotgunTotalSplats += data.PlayerStatsTotal.ShotgunSplats;
+            stats.WeaponStatistics.ShotgunTotalShotsFired += data.PlayerStatsTotal.ShotgunShotsFired;
+            stats.WeaponStatistics.ShotgunTotalShotsHit += data.PlayerStatsTotal.ShotgunShotsHit;
+            /* SPLATTERGUN STATS */
+            stats.WeaponStatistics.SplattergunTotalDamageDone += data.PlayerStatsTotal.SplattergunDamageDone;
+            stats.WeaponStatistics.SplattergunTotalSplats += data.PlayerStatsTotal.SplattergunKills;
+            stats.WeaponStatistics.SplattergunTotalShotsFired += data.PlayerStatsTotal.SplattergunShotsFired;
+            stats.WeaponStatistics.SplattergunTotalShotsHit += data.PlayerStatsTotal.SplattergunShotsHit;
+            /* SNIPERRIFLE STATS */
+            stats.WeaponStatistics.SniperTotalDamageDone += data.PlayerStatsTotal.SniperDamageDone;
+            stats.WeaponStatistics.SniperTotalSplats += data.PlayerStatsTotal.SniperKills;
+            stats.WeaponStatistics.SniperTotalShotsFired += data.PlayerStatsTotal.SniperShotsFired;
+            stats.WeaponStatistics.SniperTotalShotsHit += data.PlayerStatsTotal.SniperShotsHit;
+            /* MELEE STATS */
+            stats.WeaponStatistics.MeleeTotalDamageDone += data.PlayerStatsTotal.MeleeDamageDone;
+            stats.WeaponStatistics.MeleeTotalSplats += data.PlayerStatsTotal.MeleeKills;
+            stats.WeaponStatistics.MeleeTotalShotsFired += data.PlayerStatsTotal.MeleeShotsFired;
+            stats.WeaponStatistics.MeleeTotalShotsHit += data.PlayerStatsTotal.MeleeShotsHit;
+            /* CANNON STATS */
+            stats.WeaponStatistics.CannonTotalDamageDone += data.PlayerStatsTotal.CannonDamageDone;
+            stats.WeaponStatistics.CannonTotalSplats += data.PlayerStatsTotal.CannonKills;
+            stats.WeaponStatistics.CannonTotalShotsFired += data.PlayerStatsTotal.CannonShotsFired;
+            stats.WeaponStatistics.CannonTotalShotsHit += data.PlayerStatsTotal.CannonShotsHit;
+            /* LAUNCHER STATS */
+            stats.WeaponStatistics.LauncherTotalDamageDone += data.PlayerStatsTotal.LauncherDamageDone;
+            stats.WeaponStatistics.LauncherTotalSplats += data.PlayerStatsTotal.LauncherKills;
+            stats.WeaponStatistics.LauncherTotalShotsFired += data.PlayerStatsTotal.LauncherShotsFired;
+            stats.WeaponStatistics.LauncherTotalShotsHit += data.PlayerStatsTotal.LauncherShotsHit;
+
+            var best = data.PlayerStatsBestPerLife;
+            // Yes, I could've used something like the following:
+            // stats.PersonalRecord.MostArmorPickedUp = stats.PersonalRecord.MostArmorPickedUp < best.ArmorPickedUp ? stats.PersonalRecord.MostArmorPickedUp : best.ArmorPickedUp;
+            // But the question is, should I have?
+            if (stats.PersonalRecord.MostArmorPickedUp < best.ArmorPickedUp)
+                stats.PersonalRecord.MostArmorPickedUp = best.ArmorPickedUp;
+            if (stats.PersonalRecord.MostHealthPickedUp < best.HealthPickedUp)
+                stats.PersonalRecord.MostHealthPickedUp = best.HealthPickedUp;
+            if (stats.PersonalRecord.MostMachinegunSplats < best.MachineGunKills)
+                stats.PersonalRecord.MostMachinegunSplats = best.MachineGunKills;
+            if (stats.PersonalRecord.MostShotgunSplats < best.ShotgunSplats)
+                stats.PersonalRecord.MostShotgunSplats = best.ShotgunSplats;
+            if (stats.PersonalRecord.MostSplattergunSplats < best.SplattergunKills)
+                stats.PersonalRecord.MostSplattergunSplats = best.SplattergunKills;
+            if (stats.PersonalRecord.MostSniperSplats < best.SniperKills)
+                stats.PersonalRecord.MostSniperSplats = best.SniperKills;
+            if (stats.PersonalRecord.MostMeleeSplats < best.MeleeKills)
+                stats.PersonalRecord.MostMeleeSplats = best.MeleeKills;
+            if (stats.PersonalRecord.MostCannonSplats < best.CannonKills)
+                stats.PersonalRecord.MostCannonSplats = best.CannonKills;
+            if (stats.PersonalRecord.MostLauncherSplats < best.LauncherKills)
+                stats.PersonalRecord.MostLauncherSplats = best.LauncherKills;
+            if (stats.PersonalRecord.MostDamageDealt < best.GetDamageDealt())
+                stats.PersonalRecord.MostDamageDealt = best.GetDamageDealt();
+            if (stats.PersonalRecord.MostDamageReceived < best.DamageReceived)
+                stats.PersonalRecord.MostDamageReceived = best.DamageReceived;
+            if (stats.PersonalRecord.MostHeadshots < best.Headshots)
+                stats.PersonalRecord.MostHeadshots = best.Headshots;
+            if (stats.PersonalRecord.MostNutshots < best.Nutshots)
+                stats.PersonalRecord.MostNutshots = best.Nutshots;
+            if (stats.PersonalRecord.MostSplats < best.GetKills())
+                stats.PersonalRecord.MostSplats = best.GetKills();
+            if (stats.PersonalRecord.MostXPEarned < best.Xp)
+                stats.PersonalRecord.MostXPEarned = best.Xp;
+            if (stats.PersonalRecord.MostConsecutiveSnipes < best.ConsecutiveSnipes)
+                stats.PersonalRecord.MostConsecutiveSnipes = best.ConsecutiveSnipes;
+            #endregion
+
+            Web.SetStats(stats);
+        }
+
+        public void IncrementShotsFired(UberStrikeItemClass itemClass, int weaponId, int shots)
         {
             if (WeaponStats.ContainsKey(weaponId))
-                WeaponStats[weaponId].ShotsFired++;
+                WeaponStats[weaponId].ShotsFired += shots;
             else
             {
                 WeaponStats.Add(weaponId, new WeaponStats());
-                WeaponStats[weaponId].ShotsFired++;
+                WeaponStats[weaponId].ShotsFired += shots;
                 WeaponStats[weaponId].ItemClass = itemClass;
             }
             switch (itemClass)
             {
                 case UberStrikeItemClass.WeaponShotgun:
-                    TotalStats.ShotgunShotsFired++;
-                    CurrentLifeStats.ShotgunShotsFired++;
+                    TotalStats.ShotgunShotsFired += shots;
+                    CurrentLifeStats.ShotgunShotsFired += shots;
                     break;
                 case UberStrikeItemClass.WeaponSniperRifle:
-                    TotalStats.SniperShotsFired++;
-                    CurrentLifeStats.SniperShotsFired++;
+                    TotalStats.SniperShotsFired += shots;
+                    CurrentLifeStats.SniperShotsFired += shots;
                     break;
                 case UberStrikeItemClass.WeaponSplattergun:
-                    TotalStats.SplattergunShotsFired++;
-                    CurrentLifeStats.SplattergunShotsFired++;
+                    TotalStats.SplattergunShotsFired += shots;
+                    CurrentLifeStats.SplattergunShotsFired += shots;
                     break;
                 case UberStrikeItemClass.WeaponMelee:
-                    TotalStats.MeleeShotsFired++;
-                    CurrentLifeStats.MeleeShotsFired++;
+                    TotalStats.MeleeShotsFired += shots;
+                    CurrentLifeStats.MeleeShotsFired += shots;
                     break;
                 case UberStrikeItemClass.WeaponMachinegun:
-                    TotalStats.MachineGunShotsFired++;
-                    CurrentLifeStats.MachineGunShotsFired++;
+                    TotalStats.MachineGunShotsFired += shots;
+                    CurrentLifeStats.MachineGunShotsFired += shots;
                     break;
                 case UberStrikeItemClass.WeaponLauncher:
-                    TotalStats.LauncherShotsFired++;
-                    CurrentLifeStats.LauncherShotsFired++;
+                    TotalStats.LauncherShotsFired += shots;
+                    CurrentLifeStats.LauncherShotsFired += shots;
                     break;
                 case UberStrikeItemClass.WeaponCannon:
-                    TotalStats.CannonShotsFired++;
-                    CurrentLifeStats.CannonShotsFired++;
+                    TotalStats.CannonShotsFired += shots;
+                    CurrentLifeStats.CannonShotsFired += shots;
                     break;
             }
         }
@@ -296,6 +381,11 @@ namespace UberStrok.Realtime.Server.Game
                 return 1;
         }
 
+        public TimeSpan ShootStart;
+        public TimeSpan ShootEnd;
+        public bool IsShooting;
+        public int ShootWeapon;
+
         public TimeSpan lastKillTime;
         public int killCounter;
 
@@ -308,6 +398,7 @@ namespace UberStrok.Realtime.Server.Game
         public string AuthToken { get; set; }
         public ushort Ping { get; set; }
         public GameActor Actor { get; set; }
+        public CrossServer Web { get; set; }
 
         /* TODO: Not really sure if we need this. But might want to turn it into a HashSet. */
         public List<int> KnownActors { get; set; }

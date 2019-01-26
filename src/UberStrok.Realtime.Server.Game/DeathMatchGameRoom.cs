@@ -69,9 +69,8 @@ namespace UberStrok.Realtime.Server.Game
                         Team = mvp.Actor.Team
                     });
                 }
-
-
                 EndOfMatchDataView data = player.GetStats(hasWon, View.Guid, MostValuablePlayers);
+                player.SaveStats(data);
                 player.Events.Game.SendMatchEnd(data);
                 //player.State.Set(PeerState.Id.AfterRound);
             }

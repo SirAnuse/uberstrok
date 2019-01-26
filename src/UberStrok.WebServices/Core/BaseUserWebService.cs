@@ -21,6 +21,7 @@ namespace UberStrok.WebServices.Core
 
         public abstract bool OnIsDuplicateMemberName(string username);
         public abstract MemberOperationResult OnSetLoaduout(string authToken, LoadoutView loadoutView);
+        public abstract MemberOperationResult OnSetStats(string authToken, PlayerStatisticsView statsView);
         public abstract UberstrikeUserView OnGetMember(string authToken);
         public abstract LoadoutView OnGetLoadout(string authToken);
         public abstract PlayerStatisticsView OnGetPlayerStats(string authToken);
@@ -230,6 +231,31 @@ namespace UberStrok.WebServices.Core
             catch (Exception ex)
             {
                 Log.Error("Unable to handle IsDuplicateMemberName request:");
+                Log.Error(ex);
+                return null;
+            }
+        }
+
+        byte[] IUserWebServiceContract.SetStats(byte[] data)
+        {
+            try
+            {
+                using (var bytes = new MemoryStream(data))
+                {
+                    var authToken = StringProxy.Deserialize(bytes);
+                    var statsView = PlayerStatisticsViewProxy.Deserialize(bytes);
+
+                    var result = OnSetStats(authToken, statsView);
+                    using (var outBytes = new MemoryStream())
+                    {
+                        EnumProxy<MemberOperationResult>.Serialize(outBytes, result);
+                        return outBytes.ToArray();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to handle SetStats request:");
                 Log.Error(ex);
                 return null;
             }

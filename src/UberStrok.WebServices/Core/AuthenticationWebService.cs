@@ -91,7 +91,6 @@ namespace UberStrok.WebServices.Core
             if (member.PublicProfile.EmailAddressStatus == EmailAddressStatus.Unverified)
                 incomplete = true;
             var newAuthToken = Context.Users.LogInUser(member);
-            var playerStats = Context.Users.Db.LoadStats(steamId);
             var view = new MemberAuthenticationResultView
             {
                 MemberAuthenticationResult = result,
@@ -100,7 +99,12 @@ namespace UberStrok.WebServices.Core
                 ServerTime = DateTime.Now,
 
                 MemberView = member,
-                PlayerStatisticsView = playerStats
+                // UberStrike doesn't seem to care about this one.
+                // Not sure why, but it sets the PlayerStatisticsView to the one sent in BaseUserWebService.GetMember,
+                // just after getting this one. But we put it here anyway.
+                // It might be better to just set this to a new variable considering it overrides it anyway.
+                // EDIT: This seems to work completely fine, but I'll keep these comments here for the sake of it.
+                PlayerStatisticsView = new PlayerStatisticsView()
             };
 
             Log.Info($"Logging in member {steamId}:{newAuthToken}");

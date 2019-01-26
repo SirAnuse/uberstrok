@@ -45,11 +45,11 @@ def main(args):
         dst_dir = os.path.join(solution_dir, 'photon', 'deploy', target, 'bin')
         
         log(' - destination directory -> {0}'.format(dst_dir))
-
+		
         if not os.path.exists(dst_dir):
             log(' - * destionation directory does not exists -> creating it')
             os.makedirs(dst_dir)
-
+		
         files = os.listdir(target_dir)
         for f in files:
             src = os.path.join(target_dir, f)

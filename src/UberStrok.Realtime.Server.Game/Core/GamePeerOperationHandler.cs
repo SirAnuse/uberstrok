@@ -60,8 +60,9 @@ namespace UberStrok.Realtime.Server.Game
                 peer.Disconnect();
 
             peer.AuthToken = authToken;
-            peer.Member = GetMemberFromAuthToken(authToken);
-            peer.Loadout = GetLoadoutFromAuthToken(authToken);
+            peer.Web = new CrossServer(authToken);
+            peer.Member = peer.Web.GetMember();
+            peer.Loadout = peer.Web.GetLoadout();
 
             var room = default(BaseGameRoom);
             try
@@ -100,8 +101,9 @@ namespace UberStrok.Realtime.Server.Game
                 peer.Disconnect();
 
             peer.AuthToken = authToken;
-            peer.Member = GetMemberFromAuthToken(authToken);
-            peer.Loadout = GetLoadoutFromAuthToken(authToken);
+            peer.Web = new CrossServer(authToken);
+            peer.Member = peer.Web.GetMember();
+            peer.Loadout = peer.Web.GetLoadout();
 
             var room = GameApplication.Instance.Rooms.Get(roomId);
             if (room != null)
@@ -149,7 +151,7 @@ namespace UberStrok.Realtime.Server.Game
             // Update the loadout while ingame.
             // There is an approximate 5 second delay after this request for the loadout to take effect on other clients' sides.
             // Maybe add a join delay after changing loadout?
-            var loadout = GetLoadoutFromAuthToken(peer.AuthToken);
+            var loadout = peer.Web.GetLoadout();
             var weapons = new List<int> {
                 loadout.MeleeWeapon,
                 loadout.Weapon1,
@@ -173,40 +175,6 @@ namespace UberStrok.Realtime.Server.Game
         protected override void OnUpdateKeyState(GamePeer peer, byte state)
         {
             // Space
-        }
-
-        private UberstrikeUserView GetMemberFromAuthToken(string authToken)
-        {
-            //TODO: Provide some base class for this kind of server-server communications.
-
-            var bytes = Convert.FromBase64String(authToken);
-            var data = Encoding.UTF8.GetString(bytes);
-
-            var webServer = data.Substring(0, data.IndexOf("#####"));
-
-            s_log.Debug($"Retrieving user data {authToken} from the web server {webServer}");
-
-            // Retrieve user data from the web server.
-            var client = new UserWebServiceClient(webServer);
-            var member = client.GetMember(authToken);
-            return member;
-        }
-
-        private LoadoutView GetLoadoutFromAuthToken(string authToken)
-        {
-            //TODO: Provide some base class for this kind of server-server communications.
-
-            var bytes = Convert.FromBase64String(authToken);
-            var data = Encoding.UTF8.GetString(bytes);
-
-            var webServer = data.Substring(0, data.IndexOf("#####"));
-
-            s_log.Debug($"Retrieving loadout data {authToken} from the web server {webServer}");
-
-            // Retrieve loadout data from the web server.
-            var client = new UserWebServiceClient(webServer);
-            var loadout = client.GetLoadout(authToken);
-            return loadout;
         }
     }
 }

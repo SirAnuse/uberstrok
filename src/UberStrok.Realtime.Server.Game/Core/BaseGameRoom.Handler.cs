@@ -433,11 +433,13 @@ namespace UberStrok.Realtime.Server.Game
         {
             var shooterCmid = peer.Actor.Cmid;
 
+            s_log.Debug("Projectile emitted");
+
             var weaponId = peer.Actor.Info.CurrentWeaponID;
             var weapon = default(UberStrikeItemWeaponView);
 
             if (ShopManager.WeaponItems.TryGetValue(weaponId, out weapon))
-                peer.IncrementShotsFired(weapon.ItemClass, weaponId);
+                peer.IncrementShotsFired(weapon.ItemClass, weaponId, 1);
             else
                 s_log.Debug($"Unable to find weapon with ID {weaponId}");
 
@@ -481,6 +483,10 @@ namespace UberStrok.Realtime.Server.Game
 
         protected override void OnSingleBulletFire(GamePeer peer)
         {
+            var weapon = default(UberStrikeItemWeaponView);
+            var weaponId = peer.Actor.Info.CurrentWeaponID;
+            if (ShopManager.WeaponItems.TryGetValue(weaponId, out weapon))
+                peer.IncrementShotsFired(weapon.ItemClass, weaponId, 1);
             /* 
                 Set player in shooting state for 200ms.
                 To allow client to respond to the change and play the animation.
@@ -506,9 +512,35 @@ namespace UberStrok.Realtime.Server.Game
         {
             var state = peer.Actor.Info.PlayerState;
             if (on)
+            {
+                peer.ShootStart = DateTime.Now.TimeOfDay;
+                peer.ShootWeapon = peer.Actor.Info.CurrentWeaponID;
                 state |= PlayerStates.Shooting;
+            }
             else
+            {
+                peer.ShootEnd = DateTime.Now.TimeOfDay;
+
+                var weapon = default(UberStrikeItemWeaponView);
+                var weaponId = peer.ShootWeapon;
+                if (ShopManager.WeaponItems.TryGetValue(weaponId, out weapon))
+                {
+                    TimeSpan span = peer.ShootEnd - peer.ShootStart;
+                    // Always round the amount of shots up.
+                    var shots = (int)Math.Ceiling(span.TotalMilliseconds / weapon.RateOfFire);
+                    peer.IncrementShotsFired(weapon.ItemClass, weaponId, shots);
+                    s_log.Debug($"Shots ended for weapon {weapon.Name}. Shooting for {span.TotalMilliseconds}ms. Estimated shots fired: {shots}.");
+                }
+                // This is the part where you would put 'else' and 'unable to find weapon with {ID}.
+                // Due to the nature of swapping weapons and whatnot, this happens a lot, and produces large amounts of unnecessary logging.
+
+                // Reset values after usage
+                peer.ShootEnd = new TimeSpan();
+                peer.ShootStart = new TimeSpan();
+                peer.ShootWeapon = 0;
+
                 state &= ~PlayerStates.Shooting;
+            }
 
             peer.Actor.Info.PlayerState = state;
         }

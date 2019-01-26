@@ -15,14 +15,20 @@ namespace UberStrok.Core.Views
 		public PlayerStatisticsView(int cmid, int splats, int splatted, long shots, long hits, int headshots, int nutshots, PlayerPersonalRecordStatisticsView personalRecord, PlayerWeaponStatisticsView weaponStatistics)
 		{
             Cmid = cmid;
+            Xp = 0;
+            Level = 0;
+
+            /* THE GREAT LINE OF UBERSTRIKE-DOESNT-CARE-ABOUT-THESE BEGINS */
+            // These values appear to be calculated manually on the clientside.
+            // As such, there is no use in setting them, but they must be sent to the client.
             Hits = hits;
-			Level = 0;
-			Shots = shots;
+            Shots = shots;
 			Splats = splats;
 			Splatted = splatted;
 			Headshots = headshots;
 			Nutshots = nutshots;
-			Xp = 0;
+			/* THE GREAT LINE OF UBERSTRIKE-DOESNT-CARE-ABOUT-THESE ENDS */
+
 			PersonalRecord = personalRecord;
 			WeaponStatistics = weaponStatistics;
 		}
@@ -30,15 +36,21 @@ namespace UberStrok.Core.Views
 		public PlayerStatisticsView(int cmid, int splats, int splatted, long shots, long hits, int headshots, int nutshots, int xp, int level, PlayerPersonalRecordStatisticsView personalRecord, PlayerWeaponStatisticsView weaponStatistics)
 		{
 			Cmid = cmid;
-			Hits = hits;
 			Level = level;
-			Shots = shots;
-			Splats = splats;
-			Splatted = splatted;
-			Headshots = headshots;
-			Nutshots = nutshots;
 			Xp = xp;
-			PersonalRecord = personalRecord;
+
+            /* THE GREAT LINE OF UBERSTRIKE-DOESNT-CARE-ABOUT-THESE BEGINS */
+            // These values appear to be calculated manually on the clientside.
+            // As such, there is no use in setting them, but they must be sent to the client.
+            Hits = hits;
+            Shots = shots;
+            Splats = splats;
+            Splatted = splatted;
+            Headshots = headshots;
+            Nutshots = nutshots;
+            /* THE GREAT LINE OF UBERSTRIKE-DOESNT-CARE-ABOUT-THESE ENDS */
+
+            PersonalRecord = personalRecord;
 			WeaponStatistics = weaponStatistics;
 		}
 

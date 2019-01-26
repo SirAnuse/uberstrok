@@ -3,6 +3,7 @@ using System.ServiceModel;
 using UberStrok.Core.Common;
 using UberStrok.Core.Views;
 using System.Collections.Generic;
+using System;
 
 namespace UberStrok.WebServices.Core
 {
@@ -70,12 +71,7 @@ namespace UberStrok.WebServices.Core
                 CmuneMemberView = member,
                 UberstrikeMemberView = new UberstrikeMemberView
                 {
-                    PlayerStatisticsView = new PlayerStatisticsView
-                    {
-                        Cmid = member.PublicProfile.Cmid,
-                        PersonalRecord = new PlayerPersonalRecordStatisticsView(),
-                        WeaponStatistics = new PlayerWeaponStatisticsView()
-                    }
+                    PlayerStatisticsView = OnGetPlayerStats(authToken)
                 }
             };
             return view;
@@ -84,6 +80,21 @@ namespace UberStrok.WebServices.Core
         public override bool OnIsDuplicateMemberName(string username)
         {
             return false;
+        }
+
+        public override MemberOperationResult OnSetStats(string authToken, PlayerStatisticsView statsView)
+        {
+            var member = Context.Users.GetMember(authToken);
+            if (member == null)
+            {
+                Log.Error("An unidentified AuthToken was passed.");
+                return MemberOperationResult.InvalidData;
+            }
+
+            // Save straight up because we don't really care if the client is hacking.
+            // Stats at least. For now.
+            Context.Users.Db.Stats.Save(statsView);
+            return MemberOperationResult.Ok;
         }
 
         public override MemberOperationResult OnSetLoaduout(string authToken, LoadoutView loadoutView)
