@@ -175,6 +175,8 @@ namespace UberStrok.Realtime.Server.Game
                     }
 
                     player.Actor.Info.Health -= shortDamage;
+                    player.CurrentLifeStats.DamageReceived += (int)damage;
+                    player.TotalStats.DamageReceived += (int)damage;
 
                     /* Check if the player is dead. */
                     if (player.Actor.Info.Health <= 0)
@@ -182,7 +184,10 @@ namespace UberStrok.Realtime.Server.Game
                         player.Actor.Info.PlayerState |= PlayerStates.Dead;
                         player.Actor.Info.Deaths++;
                         if (peer.Actor.Cmid != player.Actor.Cmid)
+                        {
                             peer.Actor.Info.Kills++;
+                            peer.IncrementKills(weapon.ItemClass, BodyPart.Body);
+                        }
                         else
                             peer.Actor.Info.Kills--;
 
@@ -336,6 +341,8 @@ namespace UberStrok.Realtime.Server.Game
 
                     player.Actor.Damages.Add(byteAngle, shortDamage, part, 0, 0);
                     player.Actor.Info.Health -= shortDamage;
+                    player.CurrentLifeStats.DamageReceived += damage;
+                    player.TotalStats.DamageReceived += damage;
 
                     /* Check if the player is dead. */
                     if (player.Actor.Info.Health <= 0)
@@ -344,19 +351,7 @@ namespace UberStrok.Realtime.Server.Game
                         player.Actor.Info.Deaths++;
                         peer.Actor.Info.Kills++;
                         
-
-                        peer.IncrementKills(weapon.ItemClass);
-
-                        if (part == BodyPart.Head)
-                        {
-                            peer.TotalStats.Headshots++;
-                            peer.CurrentLifeStats.Headshots++;
-                        }
-                        else if (part == BodyPart.Nuts)
-                        {
-                            peer.TotalStats.Nutshots++;
-                            peer.CurrentLifeStats.Nutshots++;
-                        }
+                        peer.IncrementKills(weapon.ItemClass, part);
 
                         player.State.Set(PeerState.Id.Killed);
                         OnPlayerKilled(new PlayerKilledEventArgs

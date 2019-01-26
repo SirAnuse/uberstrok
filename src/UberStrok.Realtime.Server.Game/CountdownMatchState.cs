@@ -98,6 +98,7 @@ namespace UberStrok.Realtime.Server.Game
             player.CurrentLifeStats = new StatsCollectionView();
             player.StatsPerLife = new List<StatsCollectionView>();
             player.TotalStats = new StatsCollectionView();
+            player.Lifetimes = new List<TimeSpan>();
 
             var actorView = new GameActorInfoView
             {
@@ -163,6 +164,7 @@ namespace UberStrok.Realtime.Server.Game
             player.Room = Room;
             player.Actor = actor;
             player.Actor.Number = number;
+            player.LifeStart = DateTime.Now.TimeOfDay;
 
             /* Let all peers know that the player has joined the game. */
             foreach (var otherPeer in Room.Peers)

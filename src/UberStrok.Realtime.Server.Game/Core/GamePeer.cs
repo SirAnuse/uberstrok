@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UberStrok.Core;
 using UberStrok.Core.Views;
 using MoreLinq;
+using log4net;
 
 namespace UberStrok.Realtime.Server.Game
 {
@@ -13,6 +14,7 @@ namespace UberStrok.Realtime.Server.Game
     {
         private readonly GamePeerEvents _events;
         private readonly StateMachine<PeerState.Id> _state;
+        private readonly static ILog s_log = LogManager.GetLogger(nameof(BaseGameRoom));
 
         public GamePeer(InitRequest initRequest) : base(initRequest)
         {
@@ -269,8 +271,32 @@ namespace UberStrok.Realtime.Server.Game
             }
         }
 
-        public void IncrementKills(UberStrikeItemClass itemClass)
+        public void IncrementKills(UberStrikeItemClass itemClass, BodyPart part)
         {
+            ApplicationConfigurationView appConfig = Web.GetAppConfig();
+            switch (part)
+            {
+                case BodyPart.Head:
+                    TotalStats.Headshots++;
+                    CurrentLifeStats.Headshots++;
+                    CurrentLifeStats.Xp += appConfig.XpHeadshot;
+                    s_log.Debug($"Adding {appConfig.XpHeadshot} xp for headshot. {CurrentLifeStats.Xp} XP total.");
+                    CurrentLifeStats.Points += appConfig.PointsHeadshot;
+                    break;
+                case BodyPart.Nuts:
+                    TotalStats.Nutshots++;
+                    CurrentLifeStats.Nutshots++;
+                    CurrentLifeStats.Xp += appConfig.XpNutshot;
+                    s_log.Debug($"Adding {appConfig.XpNutshot} xp for nutshot. {CurrentLifeStats.Xp} XP total.");
+                    CurrentLifeStats.Points += appConfig.PointsNutshot;
+                    break;
+            }
+
+            // TotalStats XP is calculated at the end of the game anyway,
+            // and even if you do add it, it gets overridden.
+            CurrentLifeStats.Xp += appConfig.XpKill;
+            s_log.Debug($"Adding {appConfig.XpKill} xp for kill. {CurrentLifeStats.Xp} XP total.");
+            CurrentLifeStats.Points += appConfig.PointsKill;
 
             switch (itemClass)
             {
@@ -289,6 +315,8 @@ namespace UberStrok.Realtime.Server.Game
                 case UberStrikeItemClass.WeaponMelee:
                     TotalStats.MeleeKills++;
                     CurrentLifeStats.MeleeKills++;
+                    CurrentLifeStats.Xp += appConfig.XpSmackdown;
+                    CurrentLifeStats.Points += appConfig.PointsSmackdown;
                     break;
                 case UberStrikeItemClass.WeaponMachinegun:
                     TotalStats.MachineGunKills++;
@@ -308,17 +336,21 @@ namespace UberStrok.Realtime.Server.Game
         public EndOfMatchDataView GetStats(bool hasWon, string matchGuid, List<StatsSummaryView> MVPs)
         {
             EndOfMatchDataView ret = new EndOfMatchDataView();
+            foreach (var life in Lifetimes)
+                TotalTimeInGame += life;
+
             ret.HasWonMatch = hasWon;
             ret.MatchGuid = matchGuid;
             ret.MostEffecientWeaponId = GetMostEfficientWeaponId();
-            ret.PlayerStatsBestPerLife = GetBestPerLifeStats();
             ret.MostValuablePlayers = MVPs;
-            ret.TimeInGameMinutes = Room.View.TimeLimit;
-            // the client doesn't care about what is sent for PlayerXpEarned, it calculates it itself
+            ret.TimeInGameMinutes = (int)TotalTimeInGame.TotalSeconds;
+            
+            // the client doesn't care about what is sent for PlayerXpEarned, it calculates them itself
             ret.PlayerXpEarned = new Dictionary<byte, ushort>();
             CalculateXp(ret, hasWon);
             CalculatePoints(ret, hasWon);
             ret.PlayerStatsTotal = TotalStats;
+            ret.PlayerStatsBestPerLife = GetBestPerLifeStats();
             return ret;
         }
 
@@ -333,6 +365,7 @@ namespace UberStrok.Realtime.Server.Game
                 int num4 = (int)Math.Ceiling((float)(data.TimeInGameMinutes / 60 * num2));
                 int num5 = (int)Math.Ceiling((float)(data.TimeInGameMinutes / 60 * num2));
                 TotalStats.Points = (num + num3 + num4 + num5);
+                
             }
         }
 
@@ -340,21 +373,44 @@ namespace UberStrok.Realtime.Server.Game
         {
             ApplicationConfigurationView appConfig = Web.GetAppConfig();
             // Calculate total XP earned.
+            StatsPerLife.Add(CurrentLifeStats);
+            LifeEnd = DateTime.Now.TimeOfDay;
+            Lifetimes.Add(LifeEnd - LifeStart);
             if (TotalStats.GetDamageDealt() > 0)
             {
                 int num = (!data.HasWonMatch) ? appConfig.XpBaseLoser : appConfig.XpBaseWinner;
                 int num2 = (!data.HasWonMatch) ? appConfig.XpPerMinuteLoser : appConfig.XpPerMinuteWinner;
                 int num3 = Math.Max(0, TotalStats.GetKills()) * appConfig.XpKill + Math.Max(0, TotalStats.Nutshots) * appConfig.XpNutshot + Math.Max(0, TotalStats.Headshots) * appConfig.XpHeadshot + Math.Max(0, TotalStats.MeleeKills) * appConfig.XpSmackdown;
+                s_log.Debug($"Skill bonus for {Actor.PlayerName}: {num3}xp");
                 int num4 = (int)Math.Ceiling((float)(data.TimeInGameMinutes / 60 * num2));
                 int num5 = (int)Math.Ceiling((float)(data.TimeInGameMinutes / 60 * num2));
                 TotalStats.Xp = (num + num3 + num4 + num5);
+                s_log.Debug($"Total xp earned for {Actor.PlayerName}: {TotalStats.Xp}.");
             }
+            if (winner)
+            {
+                for (int i = 0; i < Lifetimes.Count; i++)
+                {
+                    StatsPerLife[i].Xp += (int)Math.Ceiling(Lifetimes[i].TotalMinutes * appConfig.XpPerMinuteWinner) * 2;
+                    StatsPerLife[i].Points += (int)Math.Ceiling(Lifetimes[i].TotalMinutes * appConfig.PointsPerMinuteWinner) * 2;
+                    s_log.Debug($"Life {i + 1} for player {Actor.PlayerName}: {Lifetimes[i].TotalMinutes} (in minutes). XP earned for lifetime: {(float)appConfig.XpPerMinuteWinner * Lifetimes[i].TotalMinutes}. XP earned for life in total: {StatsPerLife[i].Xp}.");
+                }
+            }
+            else
+            {
+                for (int i = 0; i < Lifetimes.Count; i++)
+                {
+                    StatsPerLife[i].Xp += (int)Math.Ceiling(Lifetimes[i].TotalMinutes * appConfig.XpPerMinuteLoser) * 2;
+                    StatsPerLife[i].Points += (int)Math.Ceiling(Lifetimes[i].TotalMinutes * appConfig.PointsPerMinuteLoser) * 2;
+                    s_log.Debug($"Life {i + 1} for player {Actor.PlayerName}: {Lifetimes[i].TotalMinutes} (in minutes). XP earned for lifetime: {(float)appConfig.XpPerMinuteLoser * Lifetimes[i].TotalMinutes}. XP earned for life in total: {StatsPerLife[i].Xp}.");
+                }
+            }
+            
         }
 
         public StatsCollectionView GetBestPerLifeStats()
         {
             StatsCollectionView ret = new StatsCollectionView();
-            StatsPerLife.Add(CurrentLifeStats);
             ret.ArmorPickedUp = StatsPerLife.Max(x => x.ArmorPickedUp);
             ret.HealthPickedUp = StatsPerLife.Max(x => x.HealthPickedUp);
             ret.CannonKills = StatsPerLife.Max(x => x.CannonKills);
@@ -388,6 +444,9 @@ namespace UberStrok.Realtime.Server.Game
             ret.Headshots = StatsPerLife.Max(x => x.Headshots);
             ret.Nutshots = StatsPerLife.Max(x => x.Nutshots);
             ret.Points = StatsPerLife.Max(x => x.Points);
+            ret.Xp = StatsPerLife.Max(x => x.Xp);
+            ret.ConsecutiveSnipes = StatsPerLife.Max(x => x.ConsecutiveSnipes);
+            ret.DamageReceived = StatsPerLife.Max(x => x.DamageReceived);
             // idk how they somehow gonna die twice or something
             // it could be .Max but makes more sense to .Min so eh
             ret.Deaths = StatsPerLife.Min(x => x.Deaths);
@@ -406,10 +465,14 @@ namespace UberStrok.Realtime.Server.Game
                 return 1;
         }
 
+        public TimeSpan TotalTimeInGame;
         public TimeSpan ShootStart;
         public TimeSpan ShootEnd;
         public bool IsShooting;
         public int ShootWeapon;
+
+        public TimeSpan LifeStart;
+        public TimeSpan LifeEnd;
 
         public TimeSpan lastKillTime;
         public int killCounter;
@@ -417,6 +480,7 @@ namespace UberStrok.Realtime.Server.Game
         public StatsCollectionView TotalStats { get; set; }
         public StatsCollectionView CurrentLifeStats { get; set; }
         public List<StatsCollectionView> StatsPerLife { get; set; }
+        public List<TimeSpan> Lifetimes { get; set; }
         // weapon id, stats
         public Dictionary<int, WeaponStats> WeaponStats { get; set; }
 

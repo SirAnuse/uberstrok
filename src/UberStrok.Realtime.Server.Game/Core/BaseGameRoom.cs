@@ -131,6 +131,7 @@ namespace UberStrok.Realtime.Server.Game
             peer.TotalStats = new StatsCollectionView();
             peer.CurrentLifeStats = new StatsCollectionView();
             peer.WeaponStats = new Dictionary<int, WeaponStats>();
+            peer.Lifetimes = new List<TimeSpan>();
 
             var roomView = View;
             var actorView = new GameActorInfoView
@@ -202,6 +203,7 @@ namespace UberStrok.Realtime.Server.Game
             peer.Room = this;
             peer.Actor = actor;
             peer.Actor.Number = number;
+            peer.LifeStart = DateTime.Now.TimeOfDay;
             peer.AddOperationHandler(this);
 
             /* 
@@ -304,6 +306,8 @@ namespace UberStrok.Realtime.Server.Game
 
         protected virtual void OnPlayerRespawned(PlayerRespawnedEventArgs args)
         {
+            s_log.Debug($"OnPlayerRespawned invoked for {args.Player.Actor.PlayerName}.");
+            args.Player.LifeStart = DateTime.Now.TimeOfDay;
             PlayerRespawned?.Invoke(this, args);
         }
 
@@ -331,7 +335,9 @@ namespace UberStrok.Realtime.Server.Game
                 else if (player.Actor.Cmid == args.VictimCmid)
                 {
                     player.TotalStats.Deaths++;
+                    player.LifeEnd = DateTime.Now.TimeOfDay;
                     player.StatsPerLife.Add(player.CurrentLifeStats);
+                    player.Lifetimes.Add(player.LifeEnd - player.LifeStart);
                     player.CurrentLifeStats = new StatsCollectionView();
                 }
             }

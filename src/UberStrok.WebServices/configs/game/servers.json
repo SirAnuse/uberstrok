@@ -1,16 +1,16 @@
 ﻿{
     "CommServer": {
-        "IP": "127.0.0.1",
+        "IP": "124.170.17.193",
         "Port": 5055
     },
     "GameServers": [
         {
-            "Name": "Test",
-            "IP": "127.0.0.1",
+            "Name": "Australia - Melbourne",
+            "IP": "124.170.17.193",
             "Region": 1,
             "Port": 5056,
             "UsageType": 1,
-            "MinLatency": 100
+            "MinLatency": 300
         }
     ]
 }
