@@ -154,6 +154,7 @@ namespace UberStrok.Realtime.Server.Game
             // Update the loadout while ingame.
             // There is an approximate 5 second delay after this request for the loadout to take effect on other clients' sides.
             // Maybe add a join delay after changing loadout?
+            s_log.Debug("Update loadout request received.");
             var loadout = peer.Web.GetLoadout();
             var weapons = new List<int> {
                 loadout.MeleeWeapon,
@@ -172,6 +173,7 @@ namespace UberStrok.Realtime.Server.Game
                 loadout.LowerBody,
                 loadout.Boots
             };
+            s_log.Debug("Update loadout request fulfilled.");
             peer.Actor.Info.Gear = gear;
         }
 

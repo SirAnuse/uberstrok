@@ -279,7 +279,6 @@ namespace UberStrok.Realtime.Server.Game
                 {
                     /* TODO: Clamp value. */
                     var damage = (weapon.DamagePerProjectile * bullets);
-                    s_log.Debug($"Client claims {slot} while server claimed {peer.Actor.Info.CurrentWeaponSlot}.");
 
                     // Anti-Cheat thing
                     if (!peer.WeaponStats.ContainsKey(peer.Actor.Info.Weapons[slot]))
@@ -550,11 +549,31 @@ namespace UberStrok.Realtime.Server.Game
                 var weaponId = peer.ShootWeapon;
                 if (ShopManager.WeaponItems.TryGetValue(weaponId, out weapon))
                 {
+                    if (!peer.WeaponStats.ContainsKey(weaponId))
+                        peer.WeaponStats.Add(weapon.ID, new WeaponStats
+                        {
+                            DamageDone = 0,
+                            ItemClass = weapon.ItemClass
+                        });
+
                     TimeSpan span = peer.ShootEnd - peer.ShootStart;
-                    // Always round the amount of shots up.
-                    var shots = (int)Math.Ceiling(span.TotalMilliseconds / weapon.RateOfFire);
+
+                    var shots = 0;
+                    var timeFromLastClick = DateTime.Now.TimeOfDay - peer.WeaponStats[weaponId].LastClick;
+                    // Prevent click spam, but high leniency.
+                    if (timeFromLastClick.TotalMilliseconds > weapon.RateOfFire - 100)
+                    {
+                        // Always round the amount of shots up.
+                        shots = (int)Math.Ceiling(span.TotalMilliseconds / weapon.RateOfFire);
+                        s_log.Debug($"Estimated shots fired from {weapon.Name}: {shots}.");
+                    }
+                    else
+                        s_log.Debug($"We wuz pre sure nun shotz firerd. Time from last click: {timeFromLastClick}, RoF: {weapon.RateOfFire}.");
+
+                    peer.WeaponStats[weaponId].LastClick = DateTime.Now.TimeOfDay;
+
                     peer.IncrementShotsFired(weapon.ItemClass, weaponId, shots);
-                    s_log.Debug($"Shots ended for weapon {weapon.Name}. Shooting for {span.TotalMilliseconds}ms. Estimated shots fired: {shots}.");
+                    //s_log.Debug($"Shots ended for weapon {weapon.Name}. Shooting for {span.TotalMilliseconds}ms. Estimated shots fired: {shots}.");
                 }
                 // This is the part where you would put 'else' and 'unable to find weapon with {ID}.
                 // Due to the nature of swapping weapons and whatnot, this happens a lot, and produces large amounts of unnecessary logging.

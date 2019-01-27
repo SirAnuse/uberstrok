@@ -280,14 +280,12 @@ namespace UberStrok.Realtime.Server.Game
                     TotalStats.Headshots++;
                     CurrentLifeStats.Headshots++;
                     CurrentLifeStats.Xp += appConfig.XpHeadshot;
-                    s_log.Debug($"Adding {appConfig.XpHeadshot} xp for headshot. {CurrentLifeStats.Xp} XP total.");
                     CurrentLifeStats.Points += appConfig.PointsHeadshot;
                     break;
                 case BodyPart.Nuts:
                     TotalStats.Nutshots++;
                     CurrentLifeStats.Nutshots++;
                     CurrentLifeStats.Xp += appConfig.XpNutshot;
-                    s_log.Debug($"Adding {appConfig.XpNutshot} xp for nutshot. {CurrentLifeStats.Xp} XP total.");
                     CurrentLifeStats.Points += appConfig.PointsNutshot;
                     break;
             }
@@ -295,7 +293,6 @@ namespace UberStrok.Realtime.Server.Game
             // TotalStats XP is calculated at the end of the game anyway,
             // and even if you do add it, it gets overridden.
             CurrentLifeStats.Xp += appConfig.XpKill;
-            s_log.Debug($"Adding {appConfig.XpKill} xp for kill. {CurrentLifeStats.Xp} XP total.");
             CurrentLifeStats.Points += appConfig.PointsKill;
 
             switch (itemClass)
