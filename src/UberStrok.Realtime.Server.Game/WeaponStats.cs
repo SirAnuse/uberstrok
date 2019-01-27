@@ -12,6 +12,7 @@ namespace UberStrok.Realtime.Server.Game
         public int DamageDone { get; set; }
         public int ShotsHit { get; set; }
         public int ShotsFired { get; set; }
+        public TimeSpan LastShot { get; set; }
         public UberStrikeItemClass ItemClass { get; set; }
         public int Kills { get; set; }
     }

@@ -16,19 +16,20 @@ namespace UberStrok.Core.Views
             LastLoginDate = DateTime.UtcNow;
             EmailAddressStatus = EmailAddressStatus.Unverified;
             FacebookId = string.Empty;
+            IsBanned = false;
 		}
 
-		public PublicProfileView(int cmid, string name, MemberAccessLevel accesLevel, bool isChatDisabled, DateTime lastLoginDate, EmailAddressStatus emailAddressStatus, string facebookId)
+		public PublicProfileView(int cmid, string name, MemberAccessLevel accesLevel, bool isChatDisabled, DateTime lastLoginDate, EmailAddressStatus emailAddressStatus, string facebookId, bool isBanned = false)
 		{
-            SetPublicProfile(cmid, name, accesLevel, isChatDisabled, string.Empty, lastLoginDate, emailAddressStatus, facebookId);
+            SetPublicProfile(cmid, name, accesLevel, isChatDisabled, string.Empty, lastLoginDate, emailAddressStatus, facebookId, isBanned);
 		}
 
-		public PublicProfileView(int cmid, string name, MemberAccessLevel accesLevel, bool isChatDisabled, string groupTag, DateTime lastLoginDate, EmailAddressStatus emailAddressStatus, string facebookId)
+		public PublicProfileView(int cmid, string name, MemberAccessLevel accesLevel, bool isChatDisabled, string groupTag, DateTime lastLoginDate, EmailAddressStatus emailAddressStatus, string facebookId, bool isBanned = false)
 		{
-            SetPublicProfile(cmid, name, accesLevel, isChatDisabled, groupTag, lastLoginDate, emailAddressStatus, facebookId);
+            SetPublicProfile(cmid, name, accesLevel, isChatDisabled, groupTag, lastLoginDate, emailAddressStatus, facebookId, isBanned);
 		}
 
-		private void SetPublicProfile(int cmid, string name, MemberAccessLevel accesLevel, bool isChatDisabled, string groupTag, DateTime lastLoginDate, EmailAddressStatus emailAddressStatus, string facebookId)
+		private void SetPublicProfile(int cmid, string name, MemberAccessLevel accesLevel, bool isChatDisabled, string groupTag, DateTime lastLoginDate, EmailAddressStatus emailAddressStatus, string facebookId, bool isBanned = false)
 		{
             Cmid = cmid;
             Name = name;
@@ -38,6 +39,7 @@ namespace UberStrok.Core.Views
             LastLoginDate = lastLoginDate;
             EmailAddressStatus = emailAddressStatus;
             FacebookId = facebookId;
+            IsBanned = isBanned;
 		}
 
 		public override string ToString()
@@ -79,6 +81,7 @@ namespace UberStrok.Core.Views
 			});
 		}
 
+        public bool IsBanned { get; set; }
 		public MemberAccessLevel AccessLevel { get; set; }
 		public int Cmid { get; set; }
 		public EmailAddressStatus EmailAddressStatus { get; set; }

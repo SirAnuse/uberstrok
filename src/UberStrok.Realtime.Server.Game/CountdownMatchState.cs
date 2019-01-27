@@ -1,9 +1,11 @@
 ﻿using log4net;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using UberStrok.Core.Common;
 using UberStrok.Core.Views;
 using System.Collections.Generic;
+using Color = UberStrok.Core.Common.Color;
 
 namespace UberStrok.Realtime.Server.Game
 {
@@ -110,10 +112,11 @@ namespace UberStrok.Realtime.Server.Game
                 Deaths = 0,
                 Kills = 0,
 
-                Level = 1,
+                Level = player.Member.UberstrikeMemberView.PlayerStatisticsView.Level,
 
                 Channel = ChannelType.Steam,
                 PlayerState = PlayerStates.None,
+                SkinColor = Color.Convert(player.Loadout.SkinColor),
 
                 Ping = (ushort)(player.RoundTripTime / 2),
 

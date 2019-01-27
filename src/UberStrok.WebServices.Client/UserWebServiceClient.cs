@@ -35,6 +35,27 @@ namespace UberStrok.WebServices.Client
             }
         }
 
+        public void Ban(string authToken)
+        {
+            using (var bytes = new MemoryStream())
+            {
+                StringProxy.Serialize(bytes, authToken);
+
+                var data = Channel.Ban(bytes.ToArray());
+            }
+        }
+
+        public bool IsBanned(string authToken)
+        {
+            using (var bytes = new MemoryStream())
+            {
+                StringProxy.Serialize(bytes, authToken);
+                var data = Channel.IsBanned(bytes.ToArray());
+                using (var inBytes = new MemoryStream(data))
+                    return BooleanProxy.Deserialize(inBytes);
+            }
+        }
+
         public ApplicationConfigurationView GetAppConfig()
         {
             using (var bytes = new MemoryStream())

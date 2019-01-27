@@ -23,6 +23,8 @@ namespace UberStrok.WebServices.Core
         public abstract MemberOperationResult OnSetLoaduout(string authToken, LoadoutView loadoutView);
         public abstract MemberOperationResult OnSetStats(string authToken, PlayerStatisticsView statsView);
         public abstract MemberOperationResult OnSetWallet(string authToken, MemberWalletView userView);
+        public abstract MemberOperationResult OnBan(string authToken);
+        public abstract bool OnIsBanned(string authToken);
         public abstract UberstrikeUserView OnGetMember(string authToken);
         public abstract ApplicationConfigurationView OnGetAppConfig();
         public abstract LoadoutView OnGetLoadout(string authToken);
@@ -267,6 +269,54 @@ namespace UberStrok.WebServices.Core
                     var walletView = MemberWalletViewProxy.Deserialize(bytes);
 
                     var result = OnSetWallet(authToken, walletView);
+                    using (var outBytes = new MemoryStream())
+                    {
+                        EnumProxy<MemberOperationResult>.Serialize(outBytes, result);
+                        return outBytes.ToArray();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to handle SetStats request:");
+                Log.Error(ex);
+                return null;
+            }
+        }
+
+        byte[] IUserWebServiceContract.IsBanned(byte[] data)
+        {
+            try
+            {
+                using (var bytes = new MemoryStream(data))
+                {
+                    var authToken = StringProxy.Deserialize(bytes);
+
+                    var isBanned = OnIsBanned(authToken);
+                    using (var outBytes = new MemoryStream())
+                    {
+                        BooleanProxy.Serialize(outBytes, isBanned);
+                        return outBytes.ToArray();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to handle SetStats request:");
+                Log.Error(ex);
+                return null;
+            }
+        }
+
+        byte[] IUserWebServiceContract.Ban(byte[] data)
+        {
+            try
+            {
+                using (var bytes = new MemoryStream(data))
+                {
+                    var authToken = StringProxy.Deserialize(bytes);
+
+                    var result = OnBan(authToken);
                     using (var outBytes = new MemoryStream())
                     {
                         EnumProxy<MemberOperationResult>.Serialize(outBytes, result);

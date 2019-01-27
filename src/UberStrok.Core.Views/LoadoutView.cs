@@ -10,7 +10,7 @@ namespace UberStrok.Core.Views
         public LoadoutView()
         {
             Type = AvatarType.LutzRavinoff;
-            SkinColor = string.Empty;
+            SkinColor = "#FFFFFF";
         }
 
         public LoadoutView(int loadoutId, int backpack, int boots, int cmid, int face, int functionalItem1, int functionalItem2, int functionalItem3, int gloves, int head, int lowerBody, int meleeWeapon, int quickItem1, int quickItem2, int quickItem3, AvatarType type, int upperBody, int weapon1, int weapon1Mod1, int weapon1Mod2, int weapon1Mod3, int weapon2, int weapon2Mod1, int weapon2Mod2, int weapon2Mod3, int weapon3, int weapon3Mod1, int weapon3Mod2, int weapon3Mod3, int webbing, string skinColor)

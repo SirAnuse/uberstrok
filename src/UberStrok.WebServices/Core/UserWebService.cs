@@ -120,6 +120,37 @@ namespace UberStrok.WebServices.Core
             return MemberOperationResult.Ok;
         }
 
+        public override MemberOperationResult OnBan(string authToken)
+        {
+            var member = Context.Users.GetMember(authToken);
+            if (member == null)
+            {
+                Log.Error("An unidentified AuthToken was passed.");
+                return MemberOperationResult.InvalidData;
+            }
+
+            // Save straight up because we don't really care if the client is hacking.
+            // Items at least.
+            var profile = Context.Users.Db.Profiles.Load(member.PublicProfile.Cmid);
+            profile.IsBanned = true;
+            Context.Users.Db.Profiles.Save(profile);
+            return MemberOperationResult.Ok;
+        }
+
+        public override bool OnIsBanned(string authToken)
+        {
+            var member = Context.Users.GetMember(authToken);
+            if (member == null)
+            {
+                Log.Error("An unidentified AuthToken was passed.");
+                return true;
+            }
+
+            // Save straight up because we don't really care if the client is hacking.
+            // Items at least.
+            var profile = Context.Users.Db.Profiles.Load(member.PublicProfile.Cmid);
+            return profile.IsBanned;
+        }
 
         public override MemberOperationResult OnSetLoaduout(string authToken, LoadoutView loadoutView)
         {

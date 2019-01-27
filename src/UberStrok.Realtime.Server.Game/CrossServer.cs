@@ -37,11 +37,29 @@ namespace UberStrok.Realtime.Server.Game
 
         public void SetWallet(MemberWalletView view)
         {
-            s_log.Debug($"Sending member {authToken} to the web server {webServer}");
+            s_log.Debug($"Sending member wallet {authToken} to the web server {webServer}");
 
             // Retrieve user data from the web server.
             var client = new UserWebServiceClient(webServer);
             client.SetWallet(authToken, view);
+        }
+
+        public void Ban()
+        {
+            s_log.Debug($"Sending ban request {authToken} to the web server {webServer}");
+
+            // Retrieve user data from the web server.
+            var client = new UserWebServiceClient(webServer);
+            client.Ban(authToken);
+        }
+
+        public bool IsBanned()
+        {
+            s_log.Debug($"Sending ban inquiry {authToken} to the web server {webServer}");
+
+            // Retrieve user data from the web server.
+            var client = new UserWebServiceClient(webServer);
+            return client.IsBanned(authToken);
         }
 
         public ApplicationConfigurationView GetAppConfig()

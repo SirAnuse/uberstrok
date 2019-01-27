@@ -5,6 +5,8 @@ using System.Diagnostics;
 using UberStrok.Core.Common;
 using UberStrok.Core.Views;
 using System.Linq;
+using System.Drawing;
+using Color = UberStrok.Core.Common.Color;
 
 namespace UberStrok.Realtime.Server.Game
 {
@@ -28,6 +30,8 @@ namespace UberStrok.Realtime.Server.Game
             peer.Actor.Info.Health = 100;
             peer.Actor.Info.Ping = (ushort)(peer.RoundTripTime / 2);
             peer.Actor.Info.PlayerState = PlayerStates.Ready;
+            // Convert the skin color hex code to an actual colour.
+            peer.Actor.Info.SkinColor = Color.Convert(peer.Loadout.SkinColor);
 
             lock (_peers)
             {
@@ -256,9 +260,14 @@ namespace UberStrok.Realtime.Server.Game
             }
         }
 
-        protected override void OnDirectHitDamage(GamePeer peer, int target, byte bodyPart, byte bullets)
+        protected override void OnDirectHitDamage(GamePeer peer, int target, byte bodyPart, byte bullets, byte slot)
         {
-            var weaponId = peer.Actor.Info.CurrentWeaponID;
+            // Use the client's slot ID.
+            // Allows for more accurate damage.
+            // With the previous system, if you hit someone with a melee weapon and swapped fast enough, it would deal the damage of the swapped weapon.
+            // E.g. hit someone with Stalwart Steel and swap to AWP, instant 135 damage, at the firerate of Stalwart Steel.
+            // Not exactly balanced, is it?
+            //var weaponId = peer.Actor.Info.CurrentWeaponID;
 
             foreach (var player in Players)
             {
@@ -266,11 +275,32 @@ namespace UberStrok.Realtime.Server.Game
                     continue;
 
                 var weapon = default(UberStrikeItemWeaponView);
-                if (ShopManager.WeaponItems.TryGetValue(weaponId, out weapon))
+                if (ShopManager.WeaponItems.TryGetValue(peer.Actor.Info.Weapons[slot], out weapon))
                 {
                     /* TODO: Clamp value. */
                     var damage = (weapon.DamagePerProjectile * bullets);
+                    s_log.Debug($"Client claims {slot} while server claimed {peer.Actor.Info.CurrentWeaponSlot}.");
 
+                    // Anti-Cheat thing
+                    if (!peer.WeaponStats.ContainsKey(peer.Actor.Info.Weapons[slot]))
+                        peer.WeaponStats.Add(weapon.ID, new WeaponStats
+                        {
+                            DamageDone = damage,
+                            ItemClass = weapon.ItemClass
+                        });
+
+                    var timeFromLastShot = DateTime.Now.TimeOfDay - peer.WeaponStats[weapon.ID].LastShot;
+                    // Check if the time from the last shot was over the rate of fire. We can give or take 20ms, because even the hackiest of hacks don't go that fast.
+                    if (timeFromLastShot.TotalMilliseconds < weapon.RateOfFire - 20 && timeFromLastShot.TotalMilliseconds > 20)
+                    {
+                        s_log.Debug($"{weapon.Name} was last fired {timeFromLastShot.TotalMilliseconds}ms ago, but can only be fired once every {weapon.RateOfFire}ms!");
+                        // ban the heckin heck outta them
+                        peer.Web.Ban();
+                        peer.Disconnect();
+                        peer.Dispose();
+                    }
+
+                    peer.WeaponStats[weapon.ID].LastShot = DateTime.Now.TimeOfDay;
                     /* Calculate the critical hit damage. */
                     var part = (BodyPart)bodyPart;
                     var bonus = weapon.CriticalStrikeBonus;
@@ -280,8 +310,8 @@ namespace UberStrok.Realtime.Server.Game
                             damage = (int)Math.Round(damage + (damage * (bonus / 100f)));
                     }
 
-                    peer.IncrementDamageDone(weapon.ItemClass, weaponId, damage);
-                    peer.IncrementShotsHit(weapon.ItemClass, weaponId);
+                    peer.IncrementDamageDone(weapon.ItemClass, weapon.ID, damage);
+                    peer.IncrementShotsHit(weapon.ItemClass, weapon.ID);
 
                     /* Calculate the direction of the hit. */
                     var shortDamage = (short)damage;
@@ -367,7 +397,7 @@ namespace UberStrok.Realtime.Server.Game
                 }
                 else
                 {
-                    s_log.Debug($"Unable to find weapon with ID {weaponId}");
+                    s_log.Debug($"Unable to find weapon with ID {weapon.ID}");
                 }
 
                 return;

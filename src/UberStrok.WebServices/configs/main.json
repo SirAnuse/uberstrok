@@ -1,5 +1,5 @@
 ﻿{
-    "service_base": "http://124.170.17.193/2.0",
+    "service_base": "http://124.170.17.193:8080/2.0",
     "wallet": {
         "starting_points": 10000,
         "starting_credits": 10000

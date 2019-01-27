@@ -85,6 +85,8 @@ namespace UberStrok.WebServices.Core
             var result = MemberAuthenticationResult.Ok;
             if (!linked)
                 result = MemberAuthenticationResult.InvalidEsns;
+            if (member.PublicProfile.IsBanned)
+                result = MemberAuthenticationResult.IsBanned;
 
             // Use the PublicProfile.EmailAddrsessStatus to figure out if its an incomplete account,
             // because why not.

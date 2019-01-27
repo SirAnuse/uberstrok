@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using UberStrok.Core;
 using UberStrok.Core.Common;
 using UberStrok.Core.Views;
+using Color = UberStrok.Core.Common.Color;
 
 namespace UberStrok.Realtime.Server.Game
 {
@@ -147,6 +149,7 @@ namespace UberStrok.Realtime.Server.Game
 
                 Channel = ChannelType.Steam,
                 PlayerState = PlayerStates.None,
+                SkinColor = Color.Convert(peer.Loadout.SkinColor),
 
                 Ping = (ushort)(peer.RoundTripTime / 2),
 

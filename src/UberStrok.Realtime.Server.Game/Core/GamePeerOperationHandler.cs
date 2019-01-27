@@ -104,6 +104,9 @@ namespace UberStrok.Realtime.Server.Game
             peer.Web = new CrossServer(authToken);
             peer.Member = peer.Web.GetMember();
             peer.Loadout = peer.Web.GetLoadout();
+            
+            if (peer.Web.IsBanned())
+                peer.Disconnect();
 
             var room = GameApplication.Instance.Rooms.Get(roomId);
             if (room != null)
