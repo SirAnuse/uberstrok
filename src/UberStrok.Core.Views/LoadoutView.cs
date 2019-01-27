@@ -45,7 +45,11 @@ namespace UberStrok.Core.Views
             Weapon3Mod2 = weapon3Mod2;
             Weapon3Mod3 = weapon3Mod3;
             Webbing = webbing;
-            SkinColor = skinColor;
+            if (skinColor[0] != '#')
+                SkinColor = $"#{skinColor}";
+            else
+                SkinColor = skinColor;
+
         }
 
         public override string ToString()

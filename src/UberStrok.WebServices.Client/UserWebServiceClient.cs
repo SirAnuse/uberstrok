@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using UberStrok.Core.Serialization;
 using UberStrok.Core.Serialization.Views;
 using UberStrok.Core.Views;
@@ -35,13 +36,24 @@ namespace UberStrok.WebServices.Client
             }
         }
 
-        public void Ban(string authToken)
+        public void Ban(string authToken, DateTime expiry)
+        {
+            using (var bytes = new MemoryStream())
+            {
+                StringProxy.Serialize(bytes, authToken);
+                DateTimeProxy.Serialize(bytes, expiry);
+
+                var data = Channel.Ban(bytes.ToArray());
+            }
+        }
+
+        public void Unban(string authToken)
         {
             using (var bytes = new MemoryStream())
             {
                 StringProxy.Serialize(bytes, authToken);
 
-                var data = Channel.Ban(bytes.ToArray());
+                var data = Channel.Unban(bytes.ToArray());
             }
         }
 
@@ -53,6 +65,17 @@ namespace UberStrok.WebServices.Client
                 var data = Channel.IsBanned(bytes.ToArray());
                 using (var inBytes = new MemoryStream(data))
                     return BooleanProxy.Deserialize(inBytes);
+            }
+        }
+
+        public DateTime GetBanExpiry(string authToken)
+        {
+            using (var bytes = new MemoryStream())
+            {
+                StringProxy.Serialize(bytes, authToken);
+                var data = Channel.GetBanExpiry(bytes.ToArray());
+                using (var inBytes = new MemoryStream(data))
+                    return DateTimeProxy.Deserialize(inBytes);
             }
         }
 

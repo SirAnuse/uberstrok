@@ -135,6 +135,10 @@ namespace UberStrok.Realtime.Server.Game
             peer.WeaponStats = new Dictionary<int, WeaponStats>();
             peer.Lifetimes = new List<TimeSpan>();
 
+            // Load their loadout.
+            // Previously, it would use their cached loadout.
+            peer.Loadout = peer.Web.GetLoadout();
+
             var roomView = View;
             var actorView = new GameActorInfoView
             {

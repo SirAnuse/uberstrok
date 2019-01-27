@@ -85,6 +85,21 @@ namespace UberStrok.WebServices.Core
             return view;
         }
 
+        public override DateTime OnGetBanExpiry(string authToken)
+        {
+            var member = Context.Users.GetMember(authToken);
+            if (member == null)
+            {
+                Log.Error("An unidentified AuthToken was passed.");
+                return DateTime.Now;
+            }
+
+            // Save straight up because we don't really care if the client is hacking.
+            // Items at least.
+            var profile = Context.Users.Db.Profiles.Load(member.PublicProfile.Cmid);
+            return profile.BanExpiry;
+        }
+
         public override bool OnIsDuplicateMemberName(string username)
         {
             return false;
@@ -120,7 +135,7 @@ namespace UberStrok.WebServices.Core
             return MemberOperationResult.Ok;
         }
 
-        public override MemberOperationResult OnBan(string authToken)
+        public override MemberOperationResult OnBan(string authToken, DateTime expiry)
         {
             var member = Context.Users.GetMember(authToken);
             if (member == null)
@@ -133,6 +148,24 @@ namespace UberStrok.WebServices.Core
             // Items at least.
             var profile = Context.Users.Db.Profiles.Load(member.PublicProfile.Cmid);
             profile.IsBanned = true;
+            profile.BanExpiry = expiry;
+            Context.Users.Db.Profiles.Save(profile);
+            return MemberOperationResult.Ok;
+        }
+
+        public override MemberOperationResult OnUnban(string authToken)
+        {
+            var member = Context.Users.GetMember(authToken);
+            if (member == null)
+            {
+                Log.Error("An unidentified AuthToken was passed.");
+                return MemberOperationResult.InvalidData;
+            }
+
+            // Save straight up because we don't really care if the client is hacking.
+            // Items at least.
+            var profile = Context.Users.Db.Profiles.Load(member.PublicProfile.Cmid);
+            profile.IsBanned = false;
             Context.Users.Db.Profiles.Save(profile);
             return MemberOperationResult.Ok;
         }

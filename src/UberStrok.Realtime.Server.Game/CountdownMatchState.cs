@@ -102,6 +102,10 @@ namespace UberStrok.Realtime.Server.Game
             player.TotalStats = new StatsCollectionView();
             player.Lifetimes = new List<TimeSpan>();
 
+            // Load their loadout.
+            // Previously, it would use their cached loadout.
+            player.Loadout = player.Web.GetLoadout();
+
             var actorView = new GameActorInfoView
             {
                 // we don't want their team to change

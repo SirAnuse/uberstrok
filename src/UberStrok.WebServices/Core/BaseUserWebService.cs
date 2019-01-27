@@ -23,8 +23,10 @@ namespace UberStrok.WebServices.Core
         public abstract MemberOperationResult OnSetLoaduout(string authToken, LoadoutView loadoutView);
         public abstract MemberOperationResult OnSetStats(string authToken, PlayerStatisticsView statsView);
         public abstract MemberOperationResult OnSetWallet(string authToken, MemberWalletView userView);
-        public abstract MemberOperationResult OnBan(string authToken);
+        public abstract MemberOperationResult OnBan(string authToken, DateTime expiry);
+        public abstract MemberOperationResult OnUnban(string authToken);
         public abstract bool OnIsBanned(string authToken);
+        public abstract DateTime OnGetBanExpiry(string authToken);
         public abstract UberstrikeUserView OnGetMember(string authToken);
         public abstract ApplicationConfigurationView OnGetAppConfig();
         public abstract LoadoutView OnGetLoadout(string authToken);
@@ -278,7 +280,7 @@ namespace UberStrok.WebServices.Core
             }
             catch (Exception ex)
             {
-                Log.Error("Unable to handle SetStats request:");
+                Log.Error("Unable to handle SetWallet request:");
                 Log.Error(ex);
                 return null;
             }
@@ -302,6 +304,30 @@ namespace UberStrok.WebServices.Core
             }
             catch (Exception ex)
             {
+                Log.Error("Unable to handle IsBanned request:");
+                Log.Error(ex);
+                return null;
+            }
+        }
+
+        byte[] IUserWebServiceContract.GetBanExpiry(byte[] data)
+        {
+            try
+            {
+                using (var bytes = new MemoryStream(data))
+                {
+                    var authToken = StringProxy.Deserialize(bytes);
+
+                    var banExpiry = OnGetBanExpiry(authToken);
+                    using (var outBytes = new MemoryStream())
+                    {
+                        DateTimeProxy.Serialize(outBytes, banExpiry);
+                        return outBytes.ToArray();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
                 Log.Error("Unable to handle SetStats request:");
                 Log.Error(ex);
                 return null;
@@ -315,8 +341,9 @@ namespace UberStrok.WebServices.Core
                 using (var bytes = new MemoryStream(data))
                 {
                     var authToken = StringProxy.Deserialize(bytes);
+                    var expiry = DateTimeProxy.Deserialize(bytes);
 
-                    var result = OnBan(authToken);
+                    var result = OnBan(authToken, expiry);
                     using (var outBytes = new MemoryStream())
                     {
                         EnumProxy<MemberOperationResult>.Serialize(outBytes, result);
@@ -326,7 +353,32 @@ namespace UberStrok.WebServices.Core
             }
             catch (Exception ex)
             {
-                Log.Error("Unable to handle SetStats request:");
+                Log.Error("Unable to handle Ban request:");
+                Log.Error(ex);
+                return null;
+            }
+        }
+
+        // Probably could've passed a boolean into the ban function instead.
+        byte[] IUserWebServiceContract.Unban(byte[] data)
+        {
+            try
+            {
+                using (var bytes = new MemoryStream(data))
+                {
+                    var authToken = StringProxy.Deserialize(bytes);
+
+                    var result = OnUnban(authToken);
+                    using (var outBytes = new MemoryStream())
+                    {
+                        EnumProxy<MemberOperationResult>.Serialize(outBytes, result);
+                        return outBytes.ToArray();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to handle Ban request:");
                 Log.Error(ex);
                 return null;
             }
@@ -361,6 +413,7 @@ namespace UberStrok.WebServices.Core
         {
             try
             {
+                Log.Info("Handling SetLoadout request.");
                 using (var bytes = new MemoryStream(data))
                 {
                     var authToken = StringProxy.Deserialize(bytes);

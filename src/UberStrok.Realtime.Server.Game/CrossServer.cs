@@ -44,13 +44,22 @@ namespace UberStrok.Realtime.Server.Game
             client.SetWallet(authToken, view);
         }
 
-        public void Ban()
+        public void Ban(DateTime expiry)
         {
             s_log.Debug($"Sending ban request {authToken} to the web server {webServer}");
 
             // Retrieve user data from the web server.
             var client = new UserWebServiceClient(webServer);
-            client.Ban(authToken);
+            client.Ban(authToken, expiry);
+        }
+
+        public void Unban()
+        {
+            s_log.Debug($"Sending ban request {authToken} to the web server {webServer}");
+
+            // Retrieve user data from the web server.
+            var client = new UserWebServiceClient(webServer);
+            client.Unban(authToken);
         }
 
         public bool IsBanned()
@@ -60,6 +69,15 @@ namespace UberStrok.Realtime.Server.Game
             // Retrieve user data from the web server.
             var client = new UserWebServiceClient(webServer);
             return client.IsBanned(authToken);
+        }
+
+        public DateTime GetBanExpiry()
+        {
+            s_log.Debug($"Sending ban expiry inquiry {authToken} to the web server {webServer}");
+
+            // Retrieve user data from the web server.
+            var client = new UserWebServiceClient(webServer);
+            return client.GetBanExpiry(authToken);
         }
 
         public ApplicationConfigurationView GetAppConfig()

@@ -56,6 +56,7 @@ namespace UberStrok.Core.Serialization.Views
 
                 ByteProxy.Serialize(bytes, instance.Rank);
                 ColorProxy.Serialize(bytes, instance.SkinColor);
+
                 EnumProxy<SurfaceType>.Serialize(bytes, instance.StepSound);
                 EnumProxy<TeamID>.Serialize(bytes, instance.TeamID);
 

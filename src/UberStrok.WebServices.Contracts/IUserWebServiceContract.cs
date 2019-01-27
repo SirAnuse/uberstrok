@@ -42,7 +42,13 @@ namespace UberStrok.WebServices.Contracts
         byte[] Ban(byte[] data);
 
         [OperationContract]
+        byte[] Unban(byte[] data);
+
+        [OperationContract]
         byte[] IsBanned(byte[] data);
+
+        [OperationContract]
+        byte[] GetBanExpiry(byte[] data);
 
         [OperationContract]
         byte[] SetWallet(byte[] data);

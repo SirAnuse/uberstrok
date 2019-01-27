@@ -32,6 +32,8 @@ namespace UberStrok.Realtime.Server.Game
             peer.Actor.Info.PlayerState = PlayerStates.Ready;
             // Convert the skin color hex code to an actual colour.
             peer.Actor.Info.SkinColor = Color.Convert(peer.Loadout.SkinColor);
+            peer.Loadout = peer.Web.GetLoadout();
+            s_log.Info("Joining game in progress.");
 
             lock (_peers)
             {
@@ -293,8 +295,8 @@ namespace UberStrok.Realtime.Server.Game
                     if (timeFromLastShot.TotalMilliseconds < weapon.RateOfFire - 20 && timeFromLastShot.TotalMilliseconds > 20)
                     {
                         s_log.Debug($"{weapon.Name} was last fired {timeFromLastShot.TotalMilliseconds}ms ago, but can only be fired once every {weapon.RateOfFire}ms!");
-                        // ban the heckin heck outta them
-                        peer.Web.Ban();
+                        // ban the heckin heck outta them for 1 day
+                        peer.Web.Ban(DateTime.UtcNow.AddDays(1));
                         peer.Disconnect();
                         peer.Dispose();
                     }
@@ -457,7 +459,8 @@ namespace UberStrok.Realtime.Server.Game
         {
             var shooterCmid = peer.Actor.Cmid;
 
-            s_log.Debug("Projectile emitted");
+            // TODO: Add anti-cheat here.
+            // Should be easy, as we can actually tell how much and when they're firing.
 
             var weaponId = peer.Actor.Info.CurrentWeaponID;
             var weapon = default(UberStrikeItemWeaponView);

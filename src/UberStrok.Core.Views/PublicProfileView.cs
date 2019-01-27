@@ -82,6 +82,7 @@ namespace UberStrok.Core.Views
 		}
 
         public bool IsBanned { get; set; }
+        public DateTime BanExpiry { get; set; }
 		public MemberAccessLevel AccessLevel { get; set; }
 		public int Cmid { get; set; }
 		public EmailAddressStatus EmailAddressStatus { get; set; }

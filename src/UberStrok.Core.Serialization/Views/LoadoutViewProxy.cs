@@ -28,6 +28,8 @@ namespace UberStrok.Core.Serialization.Views
 
 			if ((mask & 1) != 0)
 				view.SkinColor = StringProxy.Deserialize(bytes);
+            if (view.SkinColor[0] != '#')
+                view.SkinColor = $"#{view.SkinColor}";
 
 			view.Type = EnumProxy<AvatarType>.Deserialize(bytes);
 			view.UpperBody = Int32Proxy.Deserialize(bytes);

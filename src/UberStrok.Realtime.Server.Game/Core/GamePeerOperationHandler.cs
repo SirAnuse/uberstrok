@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using Humanizer;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -73,6 +74,7 @@ namespace UberStrok.Realtime.Server.Game
             }
             catch (NotSupportedException)
             {
+                
                 peer.Events.SendRoomEnterFailed(string.Empty, 0, "UberStrok does not support the selected game mode.");
                 s_log.Debug($"OnCreateRoom: Client tried to create a game mode which is not supported.");
                 return;
@@ -104,9 +106,22 @@ namespace UberStrok.Realtime.Server.Game
             peer.Web = new CrossServer(authToken);
             peer.Member = peer.Web.GetMember();
             peer.Loadout = peer.Web.GetLoadout();
-            
+
             if (peer.Web.IsBanned())
+            {
+                var banExpiry = DateTime.Now - peer.Web.GetBanExpiry();
+                if (banExpiry.TotalMilliseconds <= 0)
+                    peer.Web.Unban();
+                else
+                {
+                    // About 100 years lol
+                    if (banExpiry.TotalDays >= 36500)
+                        peer.Events.SendRoomEnterFailed(string.Empty, roomId, "You are banned from the game. Your ban does not expire.");
+                    else
+                        peer.Events.SendRoomEnterFailed(string.Empty, roomId, $"You are banned from the game. Your ban expires in {banExpiry.Humanize(3)}.");
+                }
                 peer.Disconnect();
+            }
 
             var room = GameApplication.Instance.Rooms.Get(roomId);
             if (room != null)
