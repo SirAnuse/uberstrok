@@ -73,8 +73,10 @@ namespace UberStrok.Core.Serialization.Views
 					StringProxy.Serialize(bytes, instance.SkinColor);
 				else
 					mask |= 1;
+                // Add this because it gets removed when saving loadout, causing errors when their loadout is retrieved from the 'database'.
+                instance.SkinColor = $"#{instance.SkinColor}";
 
-				EnumProxy<AvatarType>.Serialize(bytes, instance.Type);
+                EnumProxy<AvatarType>.Serialize(bytes, instance.Type);
 				Int32Proxy.Serialize(bytes, instance.UpperBody);
 				Int32Proxy.Serialize(bytes, instance.Weapon1);
 				Int32Proxy.Serialize(bytes, instance.Weapon1Mod1);
