@@ -5550,16 +5550,16 @@
     "QuickItems": [
         {
             "ItemType": 4,
-            "UsesPerLife": 500,
-            "UsesPerRound": 500,
-            "UsesPerGame": 500,
-            "CoolDownTime": 0,
-            "WarmUpTime": 0,
+            "UsesPerLife": 8,
+            "UsesPerRound": 32,
+            "UsesPerGame": 256,
+            "CoolDownTime": 2000,
+            "WarmUpTime": 5000,
             "MaxOwnableAmount": 5000,
             "BehaviourType": 1,
             "ItemClass": 19,
             "ID": 2001,
-            "Name": "Spring Grenades",
+            "Name": "Spring Grenades: 8",
             "PrefabName": "SpringGrenade",
             "Description": null,
             "LevelLock": 0,
@@ -5570,7 +5570,7 @@
                     "Price": 0,
                     "Currency": 1,
                     "Discount": 0,
-                    "Amount": 199,
+                    "Amount": 8,
                     "PackType": 0,
                     "Duration": 5,
                     "IsConsumable": true
@@ -5578,7 +5578,13 @@
             ],
             "IsForSale": true,
             "ShopHighlightType": 1,
-            "CustomProperties": { },
+            "CustomProperties": {
+				"Force": 1250,
+				"LifeTime": 15,
+				"Sticky": true,
+				"Amount": 8,
+				"RechargeTime": 5000
+			},
             "ItemProperties": { }
         }
     ],

@@ -448,11 +448,18 @@ namespace UberStrok.Realtime.Server.Game
         protected override void OnEmitQuickItem(GamePeer peer, Vector3 origin, Vector3 direction, int itemId, byte playerNumber, int projectileID)
         {
             var userCmid = peer.Actor.Cmid;
-            foreach (var otherPeer in Peers)
+            var quickItem = default(UberStrikeItemQuickView);
+            if (ShopManager.QuickItems.TryGetValue(itemId, out quickItem))
             {
-                if (otherPeer.Actor.Cmid != userCmid)
-                    otherPeer.Events.Game.SendEmitQuickItem(userCmid, origin, direction, itemId, playerNumber, projectileID);
+                foreach (var otherPeer in Peers)
+                {
+                    if (otherPeer.Actor.Cmid != userCmid)
+                        otherPeer.Events.Game.SendEmitQuickItem(origin, direction, itemId, playerNumber, projectileID);
+                }
             }
+            else
+                s_log.Debug($"Could not find quick item with ID {itemId}.");
+            
         }
 
         protected override void OnEmitProjectile(GamePeer peer, Vector3 origin, Vector3 direction, byte slot, int projectileId, bool explode)

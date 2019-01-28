@@ -256,7 +256,18 @@ namespace UberStrok.WebServices.Core
         {
             try
             {
-                throw new NotImplementedException();
+                using (var inBytes = new MemoryStream(data))
+                {
+                    var authToken = StringProxy.Deserialize(inBytes);
+                    var itemId = Int32Proxy.Deserialize(inBytes);
+
+                    var view = true;
+                    using (var outBytes = new MemoryStream())
+                    {
+                        BooleanProxy.Serialize(outBytes, view);
+                        return outBytes.ToArray();
+                    }
+                }
             }
             catch (Exception ex)
             {
