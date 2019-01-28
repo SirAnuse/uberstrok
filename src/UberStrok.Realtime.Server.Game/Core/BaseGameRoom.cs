@@ -165,7 +165,7 @@ namespace UberStrok.Realtime.Server.Game
 
             /* Set the gears of the character. */
             /* Holo */
-            actorView.Gear[0] = (int)peer.Loadout.Type;
+            actorView.Gear[0] = (int)peer.Loadout.Webbing;
             actorView.Gear[1] = peer.Loadout.Head;
             actorView.Gear[2] = peer.Loadout.Face;
             actorView.Gear[3] = peer.Loadout.Gloves;

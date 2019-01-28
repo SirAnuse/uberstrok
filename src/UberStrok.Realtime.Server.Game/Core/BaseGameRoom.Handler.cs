@@ -12,6 +12,16 @@ namespace UberStrok.Realtime.Server.Game
 {
     public abstract partial class BaseGameRoom : BaseGameRoomOperationHandler, IRoom<GamePeer>
     {
+        // ANTI-CHEAT CONFIG
+        // LeniencyMS is how lenient the anti-cheat is when it comes to shots fired.
+        // 50 is recommended. It allows shots to be 50ms out-of-range of their intended firerate.
+        // Setting this value too high will not allow it to detect reasonably fast firerate cheats,
+        // but settings it too low will have an increased rate of accidental auto-bans.
+        int leniencyMs = 50;
+        // Making this value false will disable the anti-cheat. This is highly recommended if you're playing with people you trust.
+        // The anti-cheat system is not perfect, and I'm currently unsure of the effects high ping will have on this system.
+        bool enableAntiCheat = true;
+
         public override void OnDisconnect(GamePeer peer, DisconnectReason reasonCode, string reasonDetail)
         {
             Leave(peer);
@@ -283,25 +293,28 @@ namespace UberStrok.Realtime.Server.Game
                     var damage = (weapon.DamagePerProjectile * bullets);
 
                     // Anti-Cheat thing
-                    if (!peer.WeaponStats.ContainsKey(peer.Actor.Info.Weapons[slot]))
-                        peer.WeaponStats.Add(weapon.ID, new WeaponStats
-                        {
-                            DamageDone = damage,
-                            ItemClass = weapon.ItemClass
-                        });
-
-                    var timeFromLastShot = DateTime.Now.TimeOfDay - peer.WeaponStats[weapon.ID].LastShot;
-                    // Check if the time from the last shot was over the rate of fire. We can give or take 20ms, because even the hackiest of hacks don't go that fast.
-                    if (timeFromLastShot.TotalMilliseconds < weapon.RateOfFire - 20 && timeFromLastShot.TotalMilliseconds > 20)
+                    if (enableAntiCheat)
                     {
-                        s_log.Debug($"{weapon.Name} was last fired {timeFromLastShot.TotalMilliseconds}ms ago, but can only be fired once every {weapon.RateOfFire}ms!");
-                        // ban the heckin heck outta them for 1 day
-                        peer.Web.Ban(DateTime.UtcNow.AddDays(1));
-                        peer.Disconnect();
-                        peer.Dispose();
-                    }
+                        if (!peer.WeaponStats.ContainsKey(peer.Actor.Info.Weapons[slot]))
+                            peer.WeaponStats.Add(weapon.ID, new WeaponStats
+                            {
+                                DamageDone = damage,
+                                ItemClass = weapon.ItemClass
+                            });
 
-                    peer.WeaponStats[weapon.ID].LastShot = DateTime.Now.TimeOfDay;
+                        var timeFromLastShot = DateTime.Now.TimeOfDay - peer.WeaponStats[weapon.ID].LastShot;
+                        // Check if the time from the last shot was over the rate of fire. We can give or take 20ms, because even the hackiest of hacks don't go that fast.
+                        if (timeFromLastShot.TotalMilliseconds < weapon.RateOfFire - 50 && timeFromLastShot.TotalMilliseconds > 50)
+                        {
+                            s_log.Debug($"{weapon.Name} was last fired {timeFromLastShot.TotalMilliseconds}ms ago, but can only be fired once every {weapon.RateOfFire}ms!");
+                            // ban the heckin heck outta them for 1 day
+                            peer.Web.Ban(DateTime.Now.AddDays(1));
+                            peer.Disconnect();
+                            peer.Dispose();
+                        }
+
+                        peer.WeaponStats[weapon.ID].LastShot = DateTime.Now.TimeOfDay;
+                    }
                     /* Calculate the critical hit damage. */
                     var part = (BodyPart)bodyPart;
                     var bonus = weapon.CriticalStrikeBonus;
@@ -575,10 +588,8 @@ namespace UberStrok.Realtime.Server.Game
                     {
                         // Always round the amount of shots up.
                         shots = (int)Math.Ceiling(span.TotalMilliseconds / weapon.RateOfFire);
-                        s_log.Debug($"Estimated shots fired from {weapon.Name}: {shots}.");
+                        //s_log.Debug($"Estimated shots fired from {weapon.Name}: {shots}.");
                     }
-                    else
-                        s_log.Debug($"We wuz pre sure nun shotz firerd. Time from last click: {timeFromLastClick}, RoF: {weapon.RateOfFire}.");
 
                     peer.WeaponStats[weaponId].LastClick = DateTime.Now.TimeOfDay;
 

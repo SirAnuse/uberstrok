@@ -193,7 +193,7 @@ namespace UberStrok.WebServices.Core
                 Log.Error("An unidentified AuthToken was passed.");
                 return MemberOperationResult.InvalidData;
             }
-
+            Log.Info($"Equipped holo: {loadoutView.Type.ToString()}.");
             // Save straight up because we don't really care if the client is hacking.
             // Items at least.
             Context.Users.Db.Loadouts.Save(loadoutView);
